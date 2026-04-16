@@ -6,15 +6,15 @@ use PDO;
 class Db {
   // บนเว็บ
   // private $host = "localhost";
-  // private $user = "ncw_budget";
-  // private $password = "Ncw2563";
-  // private $dbName = "ncw_budget";
+  // private $user = "na_budget";
+  // private $password = "Na2569";
+  // private $dbName = "na_budget";
 
   // บน XAMPP
   private $host = "localhost";
   private $user = "root";
   private $password = "";
-  private $dbName = "ncw_budget";
+  private $dbName = "na_budget";
 
   // บนเว็บ ncwschool
   // private $host = "localhost";

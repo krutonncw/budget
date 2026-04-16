@@ -2,12 +2,12 @@
     <div id="app">
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
-                <div class="sidebar-header">
+                <div class="sidebar-header" style="text-align:center">
                     <img src="/budget/assets/images/logo_main.png" alt="" srcset="" style="width: 150px;height:150px;">
                 </div>
                 <div class="">
                     <ul class="menu">
-                        <li class='sidebar-title'>ปีการศึกษา 2568</li>
+                        <li class='sidebar-title'>ปีการศึกษา 2569</li>
                         <li class="sidebar-item ">
                             <a href="/budget/App/Views/showGroupCard.php" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
@@ -34,9 +34,9 @@
                                 <li>
                                     <a href="/budget/App/Views/showPayPlan.php">ข้อมูลการเบิก</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="/budget/App/Views/getPayByDate.php">สรุปตามช่วงเวลา</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
 
@@ -46,7 +46,7 @@
                             echo "
                             <li class='sidebar-item  has-sub'>
                                 <a href='#' class='sidebar-link'>
-                                    <i data-feather='triangle' width='20'></i>
+                                    <i data-feather='pen-tool' width='20'></i>
                                     <span>เบิกเงินตามแผน</span>
                                 </a>
 
@@ -72,18 +72,18 @@
                                     <i data-feather='triangle' width='20'></i>
                                     <span>ประชุมจัดทำแผนปีการศึกษา 2566</span>
                                 </a>
-                            </li> -->
+                            </li> 
 
                             <li class='sidebar-item'>
-                                <a href='https://drive.google.com/drive/folders/1-cIdTKxG1XPv5msvqECvJl5qKDQfzlYb?usp=drive_link' class='sidebar-link'>
+                                <a href='#' class='sidebar-link'>
                                     <i data-feather='triangle' width='20'></i>
                                     <span>อัปโหลดไฟล์ประมาณการ</span>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li class='sidebar-item'>
                                 <a href='/budget/App/Views/manageActivity.php' class='sidebar-link'>
-                                    <i data-feather='triangle' width='20'></i>
+                                    <i data-feather='clipboard' width='20'></i>
                                     <span>จัดการข้อมูลกิจกรรม</span>
                                 </a>
                             </li>
@@ -91,22 +91,37 @@
                         }
                         ?>
 
+                        <!-- เข้าถึงได้เฉพาะ ระดับ admin เท่านั้น -->
+                        <?php
+                        if ($_SESSION['role'] == 1) {
+                            echo "
+                                <li class='sidebar-item'>
+                                    <a href='/budget/App/Views/manageProject.php' class='sidebar-link'>
+                                        <i data-feather='book' width='20'></i>
+                                        <span>จัดการข้อมูลโครงการ</span>
+                                    </a>
+                                </li>
+                                ";
+                        }
+                        ?>
+
+
                         <!-- เข้าถึงได้เฉพาะ ระดับ admin ผู้ปฏิบัติงาน เจ้าหน้าที่การเงิน เจ้าหน้าที่พัสดุ เจ้าหน้าที่ เท่านั้น -->
                         <?php
                         if ($_SESSION['role'] <= 5) {
                             echo "
                                 <li class='sidebar-item  has-sub'>
                                     <a href='#' class='sidebar-link'>
-                                    <i data-feather='user' width='20'></i>
+                                    <i data-feather='edit-2' width='20'></i>
                                     <span>จัดการสถานะการเบิก</span>
                                     </a>
                                     <ul class='submenu '>                                    
                                     <li>
                                         <a href='/budget/App/Views/showPayPlan.php'>จัดการสถานะตามการเบิก</a>
                                     </li>  
-                                    <li>
+                                    <!-- <li>
                                         <a href='/budget/App/Auth/views/activityShow.php'>จัดการสถานะตามกิจกรรม</a>
-                                    </li>  
+                                    </li>  -->
                                     </ul>
                                 </li>
                                 ";
@@ -116,10 +131,10 @@
                         <!-- เข้าถึงได้เฉพาะ ระดับ admin เท่านั้น -->
                         <?php
                         if ($_SESSION['role'] == 1) {
-                            echo "
+                            echo "                                
                                 <li class='sidebar-item  has-sub'>
                                     <a href='#' class='sidebar-link'>
-                                    <i data-feather='user' width='20'></i>
+                                    <i data-feather='edit' width='20'></i>
                                     <span>จัดการข้อมูลการเบิก</span>
                                     </a>
                                     <ul class='submenu '>
@@ -149,9 +164,6 @@
                                     </li>
                                     <li>
                                         <a href='/budget/App/Views/showPayPlanExcel.php' target='_blank'>Excel ข้อมูลการเบิก</a>
-                                    </li>
-                                    <li>
-                                        <a href='/budget/App/Views/manageProject.php'>จัดการข้อมูลโครงการ</a>
                                     </li>
                                     </ul>
                                 </li>
@@ -186,12 +198,7 @@
                                 <span>ขู้อมูลปีการศึกษา 2566</span>
                             </a>
                         </li> -->
-                        <li class="sidebar-item">
-                            <a href="/budget/App/Auth/Views/profile.php" class='sidebar-link'>
-                                <i data-feather="triangle" width="20"></i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
+
                         <li class="sidebar-item ">
                             <a href="#" data-toggle="modal" data-target="#logoutModal" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>

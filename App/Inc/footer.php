@@ -1,11 +1,11 @@
 <footer>
     <div class="footer clearfix mb-0 text-muted">
         <div class="float-left">
-            <p>2020 &copy; budget หากมีข้อส่งสัยเรื่องงบประมาณกรุณาติดต่องานนโยบายและแผน</p>
+            <p>หากมีข้อส่งสัยเรื่องงบประมาณกรุณาติดต่องานนโยบายและแผน</p>
         </div>
         <div class="float-right">
-            <p>โดยทีมงานคอมพิวเตอร์<span class='text-danger'><i data-feather="heart"></i></span> by <a
-                    href="http://ncw.ac.th">งานนโยบายและแผน</a> V.2.5</p>
+            <p>2026 &copy; NAbudget <span class='text-danger'><i data-feather="heart"></i></span> by <a
+                    href="#">งานนโยบายและแผน</a> V.1.0</p>
         </div>
     </div>
 </footer>

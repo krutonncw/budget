@@ -1,9 +1,9 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/vendor/autoload.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Auth/Controllers/auth.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
 
 // นำเข้า Model เพื่อใช้ตารางในฐานข้อมูล
 use Ncw\Models\Activity;
@@ -20,7 +20,7 @@ $paySumObj = new PayPlan;
 $paySum = $paySumObj->getPayGraph();
 
 //คำนวณผลรวมยอดจัดสรร
-$typeObj = new Activity;
+$typeObj = new Activity;+
 $payObj = new Payplan;
 $t['type'] = 1;
 $typehead = $typeObj->getGroupByType($t);
@@ -44,8 +44,8 @@ $total += $typeincome['sum'];
 $totalpay += $p['sum'];
 
 // นำเข้าส่วนหัวและเมนูของ page
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/sidebar.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
 
 ?>
 
@@ -220,4 +220,4 @@ require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/sidebar.php";
 </script>
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/footer.php"; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>

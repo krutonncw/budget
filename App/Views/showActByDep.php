@@ -105,7 +105,7 @@ $activitys = $activityObj->getActByDep($_REQUEST);
               }
 
               echo "<td>
-									    <a href='showPayByAct_test.php?act_id={$activity['act_id']}' class='mr-2 btn btn-outline-info round'>ข้อมูล</a>													
+									    <a href='showPayByAct.php?act_id={$activity['act_id']}' class='mr-2 btn btn-outline-info round'>ข้อมูล</a>													
 							      </td>
                 </tr>";
             }

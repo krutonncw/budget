@@ -77,7 +77,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                   foreach ($refs as $ref) {
                     echo "<div class='form-check'>";
                     echo "<input class='form-check-input' type='radio' name='pay_type' id='pay_type{$ref['ref_id']}' value='{$ref['ref_id']}' require>";
-                    echo "<label class='form-check-label' for='pay_type{$ref['ref_id']}'><h5>{$ref['title']}</h5></label></div>";
+                    echo "<label class='form-check-label' for='pay_type{$ref['ref_id']}'><h6>{$ref['title']}</h6></label></div>";
                   }
                   ?>
                 </div>
@@ -188,7 +188,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                 <button type="submit" class="btn btn-outline-primary round">บันทึก</button>
               </div>
 
-              ** โปรดอัปโหลดไฟล์ประมาณการและคุณลักษณะเฉพาะที่เมนูด้านซ้าย ตั้งชื่อไฟล์ตามเลขที่ใบคำขอ **
+              <!-- ** โปรดอัปโหลดไฟล์ประมาณการและคุณลักษณะเฉพาะที่เมนูด้านซ้าย ตั้งชื่อไฟล์ตามเลขที่ใบคำขอ ** -->
 
             </div>
         </div>

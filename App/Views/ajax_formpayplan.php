@@ -9,13 +9,13 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbName = "ncw_budget";
+$dbName = "na_budget";
 
 // บนเว็บ ncwschool
 // $servername = "localhost";
-// $username = "ncwschoo_budgetuser";
-// $password = "nongwit23";
-// $dbName = "ncwschoo_budget";
+// $username = "na_budget";
+// $password = "na2569";
+// $dbName = "na_budget";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);

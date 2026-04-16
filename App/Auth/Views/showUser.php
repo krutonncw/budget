@@ -147,4 +147,4 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
 </script>
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/footer.php"; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>

@@ -12,9 +12,9 @@ unset($user['confirm']);
 $userObj = new User();
 $result = $userObj->createUser($user);
 if ($result) {
-  header("location: /ncwbudget/App/Auth/Views/showUser.php");
-  // header("location: /ncwbudget/App/Auth/Views/showPerson.php");
+  header("location: /budget/App/Auth/Views/showUser.php");
+  // header("location: /budget/App/Auth/Views/showPerson.php");
 } else {
-  header("location: /ncwbudget/index.php?msg=error");
+  header("location: /budget/index.php?msg=error");
 }
 ?>

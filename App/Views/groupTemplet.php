@@ -25,7 +25,7 @@ foreach ($activitys as $activity) {
     }
 }
 $sum = $income - $pay;
-echo "<div class='col-md-4'><h4><span class='badge rounded-pill bg-primary'>ยอดรวมอนุมัติ  " . number_format($income, 2) . " บาท</span></h4></div>";
-echo "<div class='col-md-4'><h4><span class='badge rounded-pill bg-success'>เบิกแล้ว  " . number_format($pay, 2) . " บาท</span></h4></div>";
-echo "<div class='col-md-4'><h4><span class='badge rounded-pill bg-danger'>คงเหลือ  " . number_format($sum, 2) . " บาท</span></h4></div>";
+echo "<div class='col-md-4'><h5><span class='badge rounded-pill bg-primary'>ยอดรวมอนุมัติ  " . number_format($income, 2) . " บาท</span></h5></div>";
+echo "<div class='col-md-4'><h5><span class='badge rounded-pill bg-success'>เบิกแล้ว  " . number_format($pay, 2) . " บาท</span></h5></div>";
+echo "<div class='col-md-4'><h5><span class='badge rounded-pill bg-danger'>คงเหลือ  " . number_format($sum, 2) . " บาท</span></h5></div>";
 ?>

@@ -1,16 +1,16 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/vendor/autoload.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Auth/Controllers/auth.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
 
 use Ncw\Models\PayPlan;
 use Ncw\Models\ThaiTime;
 use Ncw\Models\Activity;
 
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/sidebar.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
 
 // สำหรับเก็บยอดรวมของแต่ละกิจกรรม
 $actmoney = 0;
@@ -117,4 +117,4 @@ $activity = $activityObj->getDepIdByActId($_REQUEST);
 <!-- จบส่วนของ modal -->
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/footer.php"; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>

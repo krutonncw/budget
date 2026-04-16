@@ -22,7 +22,7 @@ if (isset($_FILES['avatar']['tmp_name'])) {
 		$ext = end(explode(".", $_FILES['avatar']['name']));
 
 		// กำหนดชื่อให้ใหม่ไม่ซ้ำกันแบบเข้ารหัสแทน จากนั้นเชื่อมกับนามสกุล
-		$avatar = "/ncwbudget/assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
+		$avatar = "/budget/assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
 		// จากนั้นส่งไฟล์ไปเก็บ
 		move_uploaded_file($_FILES['avatar']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $avatar);
 	}
