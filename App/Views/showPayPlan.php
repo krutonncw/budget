@@ -66,7 +66,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                 echo "<td>" . $thaitime . "</td>";
 
                 if ($_SESSION['role'] > 2) {
-                  echo "<td><a href='showPayStep.php?pay_order={$payplan['pay_order']}' class='mr-2 btn btn-outline-info round'>ขั้นตอน " . $payplan['pay_step'] . "</a>";
+                  echo "<td><a href='showPayStep.php?pay_order={$payplan['pay_order']}' class='mr-2 btn btn-outline-info round btn-sm'>ขั้นตอน " . $payplan['pay_step'] . "</a>";
                 }
 
                 if ($_SESSION['role'] < 3) {
@@ -83,7 +83,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                 //    echo "<span class='badge bg-info round '> ขั้นตอน " . $payplan['pay_step'] . "</span>";
                 //  }
                 //}
-              
+
                 //if ($_SESSION['role'] < 3) {
                 //  echo "<td><a href='addPayStep.php?pay_order={$payplan['pay_order']}' class='btn btn-outline-info round'>แก้ไข</a>";
                 //  if ($payplan['pay_step'] == 4) {
@@ -92,7 +92,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                 //    echo "<span class='badge bg-info round '> ขั้นตอน " . $payplan['pay_step'] . "</span>";
                 //  }
                 //}               
-              
+
                 echo "</td></tr>";
               }
               ?>

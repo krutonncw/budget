@@ -1,4 +1,8 @@
 <body>
+    <?php
+    // คำนวณหา URL หลักของโปรเจกต์โดยอัตโนมัติ
+    $base_url = "http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']);
+    ?>
     <div id="app">
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">

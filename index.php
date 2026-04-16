@@ -1,6 +1,6 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/vendor/autoload.php";
+require __DIR__ . "/vendor/autoload.php";
 
 use Ncw\Models\Department;
 
@@ -13,10 +13,10 @@ use Ncw\Models\Department;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/ncwbudget/assets/css/style.css" />
+    <link rel="stylesheet" href="<?php echo $base_url; ?>/assets/css/style.css" />
     <!-- ใส่ icon บนแถบ title bar -->
-    <link rel="shortcut icon" href="/ncwbudget/assets/images/budgetIcon.svg" type="image/x-icon">
-    <title>NCWbudget</title>
+    <link rel="shortcut icon" href="<?php echo $base_url; ?>/assets/images/budgetIcon.svg" type="image/x-icon">
+    <title>NAbudget</title>
 </head>
 
 <body>
@@ -128,7 +128,7 @@ use Ncw\Models\Department;
                         ลงทะเบียนใหม่
                     </button>
                 </div>
-                <img src="/ncwbudget/assets/images/log.svg" class="image" alt="" />
+                <img src="<?php echo $base_url; ?>/assets/images/log.svg" class="image" alt="" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -140,12 +140,12 @@ use Ncw\Models\Department;
                         ลงชื่อเข้าใช้
                     </button>
                 </div>
-                <img src="/ncwbudget/assets/images/register.svg" class="image" alt="" />
+                <img src="<?php echo $base_url; ?>/assets/images/register.svg" class="image" alt="" />
             </div>
         </div>
     </div>
 
-    <script src="/ncwbudget/assets/js/login.js"></script>
+    <script src="<?php echo $base_url; ?>/assets/js/login.js"></script>
 </body>
 
 </html>
