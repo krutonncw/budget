@@ -109,7 +109,6 @@
                         }
                         ?>
 
-
                         <!-- เข้าถึงได้เฉพาะ ระดับ admin ผู้ปฏิบัติงาน เจ้าหน้าที่การเงิน เจ้าหน้าที่พัสดุ เจ้าหน้าที่ เท่านั้น -->
                         <?php
                         if ($_SESSION['role'] <= 5) {
@@ -239,7 +238,7 @@
                                     $avatarObj = new Person;
                                     $avatar = $avatarObj->getPersonById($_SESSION['id']);
                                     ?>
-                                    <img <?php echo "src=" . $retVal = ($avatar['avatar'] != "") ? $avatar['avatar'] : "/budget/assets/images/avatar/femalavatar.svg"; ?> alt="Card image cap"
+                                    <img <?php echo "src=" . $retVal = ($avatar['avatar'] != "") ? $avatar['avatar'] : "/budget/assets/images/avatar/avatar.png"; ?> alt="Card image cap"
                                         style="width:60px;" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi,<?php echo $_SESSION['username']; ?>

@@ -166,7 +166,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                 require 'groupTemplet.php';
 
                 echo "</p>
-                            <a href='showActByDep.php?dep_id={$department['dep_id']}' class='mr-2 btn btn-outline-info round'>ดูข้อมูล</a>
+                            <a href='showActByDep.php?dep_id={$department['dep_id']}' class='mr-2 btn btn-outline-info round btn-sm'>ดูข้อมูล</a>
                         </div>
                     </div>
                 </div>

@@ -65,8 +65,8 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
               </select>
             </div>
 
-            <h6>มีความประสงค์ที่จะขอใช้เงินในการดำเนินงาน -> <?php echo $payplan['act_name']; ?></h6>
-            <select class="choices form-select " name="act_id" required>
+            <h6>มีความประสงค์ที่จะขอใช้เงินในการดำเนินงาน</h6>
+            <select class="choices form-select " name="act_id" disabled>
               <option value="">เลือกกิจกรรม....</option>
               <?php
               $activityObj = new Activity();
@@ -95,7 +95,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                     echo "<input class='form-check-input' type='radio' name='pay_type' id='pay_type' value='{$ref['ref_id']}' ";
                     if ($payplan['pay_type'] == $ref['ref_id'])
                       echo "checked>";
-                    echo "<label class='form-check-label' for='pay_type{$ref['ref_id']}'><h5>{$ref['title']}</h5></label></div>";
+                    echo "<label class='form-check-label' for='pay_type{$ref['ref_id']}'><h6>{$ref['title']}</h6></label></div>";
                   }
                   ?>
                 </div>

@@ -14,10 +14,12 @@ use Ncw\Models\Department;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/ncwbudget/assets/css/style.css" />
+  <link rel="stylesheet" href="/budget/assets/css/style.css" />
+  <!-- <link rel="stylesheet" href="/budget/assets/css/bootstrap.css"> -->
+  <!-- <link rel="stylesheet" href="/budget/assets/css/app.css"> -->
   <!-- ใส่ icon บนแถบ title bar -->
-  <link rel="shortcut icon" href="/ncwbudget/assets/images/budgetIcon.svg" type="image/x-icon">
-  <title>NCWbudget</title>
+  <link rel="shortcut icon" href="/budget/assets/images/budgetIcon.svg" type="image/x-icon">
+  <title>NAbudget</title>
 </head>
 
 <body>
@@ -59,8 +61,8 @@ use Ncw\Models\Department;
 
   <!-- <form action="App/Auth/Controllers/addPerson.php" method="get" name="new"> -->
   <form action="../Controllers/addPerson.php" method="get" name="new">
-    <h2 class="title">ลงทะเบียนใหม่</h2>
-    <h4 style="font-size: 35px;font-weight: 350;color: #f11818;">เฉพาะบุคลากรของโรงเรียนหนองฉางเท่านั้น</h4>
+    <h2 class="title">ลงทะเบียนผู้ใช้งาน NAbudget</h2>
+    <h4 style="font-size: 35px;font-weight: 350;color: #f11818;">โรงเรียนนิยมศิลป์อนุสรณ์</h4>
     <div class="input-field" id="ftname">
       <i class="fas fa-user"></i>
       <input type="text" name="firstname" id="firstname" placeholder="ชื่อ" required />
@@ -99,12 +101,12 @@ use Ncw\Models\Department;
       <i class="fas fa-lock"></i>
       <input type="password" name="confirm" id="confirm" placeholder="รหัสผ่านอีกครั้ง" required />
     </div>
-    <input type="submit" class="btn" value="ลงทะเบียนใหม่" />
+    <input type="submit" class="btn" value="บันทึกข้อมูล" />
 
   </form>
 
   <div style="text-align: center;">
-    <button><a href="/budget/App/Views/showGroupCard.php">หน้าหลัก</a></button>
+    <button class="btn"><a href="/budget/App/Views/showGroupCard.php">กลับ</a></button>
   </div>
 </body>
 

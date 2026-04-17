@@ -26,7 +26,7 @@ class Project extends Db
   public function addProject($project)
   {
     $sql = "
-      INSERT INTO project (pro_name,dep_id,create_at) VALUES (:pro_name,:dep_id,'')
+      INSERT INTO project (pro_code,pro_name,dep_id,create_at) VALUES (:pro_code,:pro_name,:dep_id,'')
     ";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($project);
@@ -56,7 +56,7 @@ class Project extends Db
   public function updateProject($project)
   {
     $sql = "
-      UPDATE project SET pro_name = :pro_name, dep_id = :dep_id WHERE pro_id = :pro_id
+      UPDATE project SET pro_code = :pro_code, pro_name = :pro_name, dep_id = :dep_id WHERE pro_id = :pro_id
     ";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($project);

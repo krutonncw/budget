@@ -38,7 +38,7 @@ use Ncw\Models\Department;
                         <input type="password" name="password" id="password" placeholder="รหัสผ่าน" required />
                     </div>
                     <input type="submit" value="ลงชื่อเข้าใช้" class="btn solid" />
-                    <p class="social-text">หรือลงชื่อเข้าใช้ในบัญชี</p>
+                    <!-- <p class="social-text">หรือลงชื่อเข้าใช้ในบัญชี</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -52,7 +52,7 @@ use Ncw\Models\Department;
                         <a href="#" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </form>
 
                 <form action="App/Auth/Controllers/addPerson.php" class="sign-up-form" method="get" name="new">
@@ -120,7 +120,7 @@ use Ncw\Models\Department;
             <div class="panel left-panel">
                 <div class="content">
                     <h3>ลงทะเบียนใหม่</h3>
-                    <h4 style="font-size: 20px;font-weight: 350;color: #fff34d;">เฉพาะบุคลากรของโรงเรียนหนองฉางเท่านั้น</h4>
+                    <h4 style="font-size: 20px;font-weight: 350;color: #fff34d;">เฉพาะบุคลากรของโรงเรียนนิยมศิลป์อนุสรณ์</h4>
                     <p>
                         ถ้าท่านยังไม่มีบัญชีให้ลงทะเบียนใหม่
                     </p>

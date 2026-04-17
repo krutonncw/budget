@@ -99,6 +99,10 @@ $departments = $departmentObj->getAllDepartments();
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
+                        <label for="add_pro_code" class="form-label">เลขรหัสโครงการ</label>
+                        <input type="text" class="form-control" name="add_pro_code" id="add_pro_code" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="add_pro_name" class="form-label">ชื่อโครงการ</label>
                         <input type="text" class="form-control" name="pro_name" id="add_pro_name" required>
                     </div>
@@ -136,6 +140,11 @@ $departments = $departmentObj->getAllDepartments();
                     </div>
                     <div class="modal-body">
                         <input type="hidden" name="pro_id" value="<?php echo $project['pro_id']; ?>">
+                        <div class="mb-3">
+                            <label class="form-label">เลขรหัสโครงการ</label>
+                            <input type="text" class="form-control" name="pro_code"
+                                value="<?php echo htmlspecialchars($project['pro_code']); ?>" required>
+                        </div>
                         <div class="mb-3">
                             <label class="form-label">ชื่อโครงการ</label>
                             <input type="text" class="form-control" name="pro_name"
