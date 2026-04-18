@@ -19,6 +19,7 @@ class PayPlan extends Db
         payplan.pay_objective,
         payplan.pay_date,
         payplan.pay_step,
+        payplan.pay_bill,
         budgettype.bgt_name
       FROM payplan 
         LEFT JOIN activity ON payplan.act_id = activity.act_id
@@ -319,6 +320,23 @@ class PayPlan extends Db
     return 1;
   }
 
+  //เปลี่ยนยอดเงินที่จ่าย
+  public function editPayBill($ID)
+  {
+    $sql = "
+  UPDATE 
+    payplan
+  SET
+    pay_step = :pay_step,
+    pay_bill = :pay_bill
+  WHERE
+    pay_order = :pay_order
+  ";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute($ID);
+    return 1;
+  }
+
   //แก้ไขรายละเอียดใบคำขอ (กลุ่ม ชื่อ วันที่)
   public function editPayPlan($pay_order)
   {
@@ -391,6 +409,7 @@ class PayPlan extends Db
         payplan.pay_objective,
         payplan.pay_date,
         payplan.pay_step,
+        payplan.pay_bill,
         budgettype.bgt_name
       FROM payplan 
         LEFT JOIN activity ON payplan.act_id = activity.act_id

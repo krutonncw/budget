@@ -123,8 +123,7 @@ ob_start();
 
     <tr>
       <td colspan="2">
-        <span style="font-size: 20pt; font-weight: bold;">ส่วนราชการ </span><span>โรงเรียนหนองฉางวิทยา อำเภอหนองฉาง
-          จังหวัดอุทัยธานี 61110</span>
+        <span style="font-size: 20pt; font-weight: bold;">ส่วนราชการ </span><span>โรงเรียนนิยมศิลป์อนุสรณ์ อำเภอวิเชียรบุรี จังหวัดเพชรบูรณ์ 67130</span>
       </td>
     </tr>
 
@@ -141,7 +140,7 @@ ob_start();
     <tr>
       <td colspan="2" style="border-bottom: 1px solid black ;">
         <span style="font-size: 20pt; font-weight: bold;">เรื่อง
-        </span><span>ขออนุมัติจัดกิจกรรมและใช้เงินตามแผนปฏิบัติการประจำปีการศึกษา 2568</span>
+        </span><span>ขออนุมัติจัดกิจกรรมและใช้เงินตามแผนปฏิบัติการประจำปีการศึกษา 2569</span>
       </td>
     </tr>
 
@@ -152,13 +151,13 @@ ob_start();
     </tr>-->
 
     <tr>
-      <td colspan="2">เรียน ผู้อำนวยการโรงเรียนหนองฉางวิทยา</td>
+      <td colspan="2">เรียน ผู้อำนวยการโรงเรียนนิยมศิลป์อนุสรณ์</td>
     </tr>
 
     <tr>
       <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         ด้วย<?php echo $payplans['dep_name']; ?> มีความประสงค์ที่จะขอ<?php echo $RefTitle['title']; ?>
-        <?php echo $payplans['pay_objective']; ?> ตามแผนปฏิบัติการประจำปี 2568
+        <?php echo $payplans['pay_objective']; ?> ตามแผนปฏิบัติการประจำปี 2569
         โครงการ<?php echo $payplans['pro_name']; ?> - <?php echo $payplans['act_name']; ?> เป็นจำนวนเงิน
         <?php echo number_format($payplans['pay_money'], 2); ?> บาท (<?php echo $thaibath; ?>)
         <!-- <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -233,7 +232,7 @@ ob_start();
           <tr>
             <td style="text-align: center;">
               ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นายปุณณรัตน์ ทองธรรม)<br>
+              (นายกฤษฎิ์ไกรวิชญ์ จันทรัตน์)<br>
               <!-- (............................................)<br> -->
               ........../.................../..........
             </td>
@@ -254,7 +253,7 @@ ob_start();
           <tr>
             <td style="text-align: center;">
               ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นายตฤณกร แก้วศรีงาม)<br>
+              (นางสาวธนภรณ์ เชื้อเพ็ง)<br>
               ........../.................../..........
             </td>
           </tr>
@@ -267,17 +266,10 @@ ob_start();
             </td>
           </tr>
           <tr>
-            <!-- <td style="text-align: center;">
-              ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นายอัคคณัฐ อัยรา)<br>
-              ผู้อำนวยการโรงเรียนหนองฉางวิทยา<br>
-              ........../.................../..........
-            </td> -->
             <td style="text-align: center;">
               ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นางสายธาร จีรดิษฐ)<br>
-              รองผู้อำนวยการโรงเรียน รักษาการในตำแหน่ง<br>
-              ผู้อำนวยการโรงเรียนหนองฉางวิทยา<br>
+              (นายธนัญชัย พรหมภักดี)<br>
+              ผู้อำนวยการโรงเรียนนิยมศิลป์อนุสรณ์<br>
               ........../.................../..........
             </td>
           </tr>

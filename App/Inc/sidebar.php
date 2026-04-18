@@ -120,11 +120,11 @@
                                     </a>
                                     <ul class='submenu '>                                    
                                     <li>
-                                        <a href='/budget/App/Views/showPayPlan.php'>จัดการสถานะตามการเบิก</a>
+                                        <a href='/budget/App/Views/showPayBill.php'>จัดการสถานะการเบิก</a>
                                     </li>  
-                                    <!-- <li>
-                                        <a href='/budget/App/Auth/views/activityShow.php'>จัดการสถานะตามกิจกรรม</a>
-                                    </li>  -->
+                                    <li>
+                                        <a href='/budget/App/views/searchEditPayBill.php'>จัดการการจ่ายเงิน</a>
+                                    </li>
                                     </ul>
                                 </li>
                                 ";

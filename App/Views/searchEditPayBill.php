@@ -6,7 +6,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
 require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
 
 //ตรวจสอบระดับของสิทธิ์ว่าเป็น admin เปล่าหน้านี้เฉพาะ admin เท่านั้น
-if ($_SESSION['role'] > 1) {
+if ($_SESSION['role'] > 2) {
   header("location: ../../views/budget/groupCardShow.php");
 }
 
@@ -20,12 +20,12 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
   <div class="col-md-8 col-sm-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">แก้ไขข้อมูลการใช้เงินตามแผน</h4>
+        <h4 class="card-title">แก้ไขข้อมูลการจ่ายเงิน</h4>
       </div>
       <div class="card-content">
 
         <div class="card-body">
-          <form action="formEditMoney.php" class="form form-vertical" method="POST">
+          <form action="formEditPayBiil.php" class="form form-vertical" method="POST">
             <div class="col-12">
               <div class="form-group has-icon-left">
                 <label for="mobile-id-icon">เลขที่คำขอ</label>
