@@ -33,7 +33,7 @@ if ($_REQUEST['action'] == 'repassword') {
   <div class="col-md-8 col-sm-12">
     <div class="card">
       <div class="card-content">
-        <img class="card-img-top rounded mx-auto d-block" <?php echo "src=" . $retVal = ($persons['avatar'] != "") ? $persons['avatar'] : "femalavatar.svg"; ?> alt="Card image cap"
+        <img class="card-img-top rounded mx-auto d-block" <?php echo "src=../../../assets/images/avatar/" . $retVal = ($persons['avatar'] != "") ? $persons['avatar'] : "avatar.png"; ?> alt="Card image cap"
           style="width: 200px;height:200px; text-align: center; margin-top:10px;" />
         <div class="card-body">
           <h4 class="card-title" style="font-size: 2rem;">ข้อมูลสมาชิก</h4>

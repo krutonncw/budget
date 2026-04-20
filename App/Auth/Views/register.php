@@ -102,6 +102,7 @@ use Ncw\Models\Department;
       <input type="password" name="confirm" id="confirm" placeholder="รหัสผ่านอีกครั้ง" required />
     </div>
     <input type="submit" class="btn" value="บันทึกข้อมูล" />
+    <input type="hidden" name="role" id="role" value="8" />
 
   </form>
 

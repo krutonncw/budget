@@ -16,13 +16,13 @@
         <div class="container text-center pt-32">
             <img src="/budget/assets/images/wait2.svg" alt="" srcset="" style="width: 300px;height:300px;">
             <h1 class='status_login'>กรุณารออนุมัติ</h1>
-            <p style="font-size: 1.5rem;">ทางผู้ดูแลระบบจะดำเนินการตรวจสอบข้อมูลในเบื้องต้นก่อน</p>
-            <p style="font-size: 1.5rem;">ว่าเป็นบุคลากรของโรงเรียนหนองฉางหรือไม่</p>
+            <p style="font-size: 1.5rem;">ทางผู้ดูแลระบบจะดำเนินการตรวจสอบข้อมูลในเบื้องต้น</p>
+            <p style="font-size: 1.5rem;">ท่านเป็นบุคลากรของโรงเรียนหรือไม่</p>
             <!-- <a href="index.html" class='btn btn-primary'>Go Home</a> -->
         </div>
 
         <div class="footer pt-32">
-            <p class="text-center">Copyright &copy; โรงเรียนหนองฉางวิทยา 2020</p>
+            <p class="text-center">Copyright &copy; งานนโยบายและแผน 2026</p>
         </div>
     </div>
 </body>

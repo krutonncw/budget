@@ -14,6 +14,7 @@ unset($person['username']);
 unset($person['email']);
 unset($person['password']);
 unset($person['confirm']);
+unset($person['role']);
 $person += array("dob" => "2020/01/01");
 $person += array("gender_id" => 1);
 $person += array("avatar" => '');

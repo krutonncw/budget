@@ -82,7 +82,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                 </div>
             </div>
         </div> -->
-        <!-- <div class="row" id="total">
+        <div class="row" id="total">
             <div class="card">
                 <div class="card-heder pt-3">
                     <h3>งบประมาณทั้งหมดของโรงเรียน</h3>
@@ -101,11 +101,13 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                             $type['bgt_id'] = $BudgetType['bgt_id'];
                             $sumActMoneys = $sumActMoneyObj->getSumActMoneyGroupByBgt($type);
                             $sumPayMoneys = $sumPayMoneyObj->getSumPayMoneyGroupByBgt($type);
-
+                            if ($sumPayMoneys === false) {
+                                $sumPayMoneys['sumPayMoney'] = 0;
+                            }
                             echo "<div class='col-md-3'>
                             <div class='card'>
                                 <div class='card-header'>
-                                    <h4><i class='icofont-dollar-plus icofont-2x mr-2' style='color: #00BFFF;'></i>{$BudgetType['bgt_name']}</h4>
+                                    <h4><i class='icofont-dollar-plus icofont-1x mr-2' style='color: #00BFFF;'></i>{$BudgetType['bgt_name']}</h4>
                                 </div>
                                 <div class='card-body ml-0'>
                                     <div id='radialBarsincome' class='mx-0'></div>
@@ -138,7 +140,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
     </section>
     <section class="section">

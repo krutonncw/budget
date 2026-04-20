@@ -57,7 +57,7 @@ use Ncw\Models\Department;
 
                 <form action="App/Auth/Controllers/addPerson.php" class="sign-up-form" method="get" name="new">
                     <h2 class="title">ลงทะเบียนใหม่</h2>
-                    <!-- <h4 style="font-size: 35px;font-weight: 350;color: #f11818;">เฉพาะบุคลากรของโรงเรียนหนองฉางเท่านั้น</h4> -->
+                    <!-- <h4 style="font-size: 35px;font-weight: 350;color: #f11818;">เฉพาะบุคลากรของโรงเรียนนิยมศิลป์อนุสรณ์เท่านั้น</h4> -->
                     <h4 style="font-size: 20px;font-weight: 350;color: #f11818;">ติดต่อเจ้าหน้าที่แผนงานโรงเรียน !</h4>
                     <!-- <div class="input-field" id="ftname">
                         <i class="fas fa-user"></i>
@@ -96,8 +96,8 @@ use Ncw\Models\Department;
                         <i class="fas fa-lock"></i>
                         <input type="password" name="confirm" id="confirm" placeholder="รหัสผ่านอีกครั้ง" required />
                     </div>
-                    <input type="submit" class="btn" value="ลงทะเบียนใหม่" />
-                    <p class="social-text">หรือลงชื่อเข้าใช้ในบัญชี</p>
+                    <input type="submit" class="btn" value="ลงทะเบียนใหม่" /> -->
+                    <!-- <p class="social-text">หรือลงชื่อเข้าใช้ในบัญชี</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>

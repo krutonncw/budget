@@ -20,28 +20,28 @@ $paySumObj = new PayPlan;
 $paySum = $paySumObj->getPayGraph();
 
 //คำนวณผลรวมยอดจัดสรร
-$typeObj = new Activity;+
-$payObj = new Payplan;
-$t['type'] = 1;
-$typehead = $typeObj->getGroupByType($t);
-$p = $payObj->getGroupByType($t);
-$sum = $typehead['sum'] - $p['sum'];
-$total += $typehead['sum'];
-$totalpay += $p['sum'];
+// $typeObj = new Activity;
+// $payObj = new Payplan;
+// $t['type'] = 1;
+// $typehead = $typeObj->getGroupByType($t);
+// $p = $payObj->getGroupByType($t);
+// $sum = $typehead['sum'] - $p['sum'];
+// $total += $typehead['sum'];
+// $totalpay += $p['sum'];
 
-$t['type'] = 12;
-$typefree = $typeObj->getGroupByType($t);
-$p = $payObj->getGroupByType($t);
-$sum = $typefree['sum'] - $p['sum'];
-$total += $typefree['sum'];
-$totalpay += $p['sum'];
+// $t['type'] = 12;
+// $typefree = $typeObj->getGroupByType($t);
+// $p = $payObj->getGroupByType($t);
+// $sum = $typefree['sum'] - $p['sum'];
+// $total += $typefree['sum'];
+// $totalpay += $p['sum'];
 
-$t['type'] = 5;
-$typeincome = $typeObj->getGroupByType($t);
-$p = $payObj->getGroupByType($t);
-$sum = $typeincome['sum'] - $p['sum'];
-$total += $typeincome['sum'];
-$totalpay += $p['sum'];
+// $t['type'] = 5;
+// $typeincome = $typeObj->getGroupByType($t);
+// $p = $payObj->getGroupByType($t);
+// $sum = $typeincome['sum'] - $p['sum'];
+// $total += $typeincome['sum'];
+// $totalpay += $p['sum'];
 
 // นำเข้าส่วนหัวและเมนูของ page
 require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
@@ -55,16 +55,16 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-12 order-md-1 order-last">
-                <h3>งบประมาณของโรงเรียนหนองฉางวิทยา ปีการศึกษา 2567/2</h3>
+                <h3>งบประมาณของโรงเรียนหนองฉางวิทยา ปีการศึกษา 2569</h3>
             </div>
         </div>
     </div>
     <section class="section">
-        <div class="row " id="top">
+        <!-- <div class="row " id="top">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class='card-heading p-1 pl-3'>สรุปการเบิกจ่ายงบประมาณประจำเดือน</h3>
+                        <h3 class='card-heading p-1 pl-3'>สรุปการเบิกจ่ายงบประมาณ</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -96,7 +96,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row" id="total">
             <div class="card">
                 <div class="card-heder pt-3">
@@ -117,27 +117,33 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                         $totalPayMomeys = 0;
                         foreach ($BudgetTypes as $BudgetType) {
                             $type['bgt_id'] = $BudgetType['bgt_id'];
-                            $sumActMoneys = $sumActMoneyObj->getSumActMoneyGroupByBgt($type);
+                            $sumActMoneys = $sumActMoneyObj->getSumActMoneyGroupByBgt($type);                            
                             $sumPayMoneys = $sumPayMoneyObj->getSumPayMoneyGroupByBgt($type);
+                            if ($sumPayMoneys === false){
+                                $sumPayMoneys['sumPayMoney'] = 0;
+                            }
                             $sumActBalances = $sumActBalanceObj->getSumActBalanceGroupByBgt($type);
                             $sumPayMoneySteps = $sumPayMoneyStepObj->getSumPayMoneyGroupStepByBgt($type);
+                             if ($sumPayMoneySteps === false){
+                                $sumPayMoneySteps['sumPayMoneyStep'] = 0;
+                            }
                             echo "<div class='col-md-3'>
                             <div class='card'>
                                 <div class='card-header'>
-                                    <h4><i class='icofont-dollar-plus icofont-2x mr-2' style='color: #00BFFF;'></i>{$BudgetType['bgt_name']}</h4>
+                                    <h4><i class='icofont-dollar-plus icofont-1x mr-2' style='color: #00BFFF;'></i>{$BudgetType['bgt_name']}</h4>
                                 </div>
                                 <div class='card-body ml-0'>
                                     <div id='radialBarsincome' class='mx-0'></div>
                                     <div class='text-center'>";
-                            echo "<h6>ยอดจัดสรร</h6>
+                            echo "<h5>ยอดจัดสรร</h5>
                                         <h4 class='text-primary'>" . number_format($sumActMoneys['sumActMoney'], 2) . "</h4>";
-                            echo "<h6>เบิกแล้ว</h6>
+                            echo "<h5>เบิกแล้ว</h5>
                                         <h4 class='text-success'>" . number_format($sumPayMoneys['sumPayMoney'], 2) . "</h4>";
-                            echo "<h6>คงเหลือ</h6>
+                            echo "<h5>คงเหลือ</h5>
                                         <h4 class='text-danger'>" . number_format($sumActMoneys['sumActMoney'] - $sumPayMoneys['sumPayMoney'], 2) . "</h4>";
-                            echo "<h6>จ่ายแล้ว</h6>
+                            echo "<h5>จ่ายแล้ว</h5>
                                         <h4 class='text-orange'>" . number_format($sumPayMoneySteps['sumPayMoneyStep'], 2) . "</h4>";
-                            echo "<h6>รวมคงเหลือ</h6>
+                            echo "<h5>รวมคงเหลือ</h5>
                                          <h4 class='text-info'>" . number_format($sumActBalances['sumActBalance'], 2) . "</h4>
                                     </div>
                                 </div>

@@ -111,10 +111,12 @@ ob_start();
       <td colspan="2">
         <table style="border: 0px; width: 100%">
           <tr>
-            <td width=30%><img src="<?php echo SERVERROOT . '/App/Reports/krut.png'; ?>" style="width: 1.5cm;"></td>
+            <!-- <td width=30%><img src="<?php echo SERVERROOT . '/App/Reports/krut.png'; ?>" style="width: 1.5cm;"></td> -->
+            <td width=30%><img src="../Reports/krut.png" style="width: 1.5cm;"></td>
             <td valign="bottom" style="text-align: center; font-size: 22pt; font-weight: bold;">บันทึกข้อความ</td>
             <td width=30% valign="top" style="text-align: right;">เลขที่
-              <?php echo str_pad($payplans['pay_order'], 3, '0', STR_PAD_LEFT) . "-" . str_pad($payplans['dep_id'], 2, '0', STR_PAD_LEFT) . str_pad($payplans['pro_id'], 2, '0', STR_PAD_LEFT); ?>
+              <!-- <?php echo str_pad($payplans['pay_order'], 3, '0', STR_PAD_LEFT) . "-" . str_pad($payplans['dep_id'], 2, '0', STR_PAD_LEFT) . str_pad($payplans['pro_id'], 2, '0', STR_PAD_LEFT); ?> -->
+              <?php echo str_pad($payplans['pay_order'], 3, '0', STR_PAD_LEFT) . "-" . $payplans['pro_code']; ?>
             </td>
           </tr>
         </table>

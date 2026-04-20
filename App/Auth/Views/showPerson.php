@@ -50,7 +50,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
               $n = 0;
               foreach ($persons as $person) {
                 $n++;
-                $avatar = ($person['avatar'] != "") ? $person['avatar'] : "/budget/assets/images/avatar/femalavatar.svg";
+                $avatar = ($person['avatar'] != "") ? $person['avatar'] : "/budget/assets/images/avatar/avatar.png";
                 echo "
                   <tr>
                     <td>{$n}</td>
@@ -61,12 +61,14 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
                     <td>{$person['dep_name']}</td>												
                     <td>{$person['username']}</td>
                     
-                    <td>
-                      <a href='showEditPerson.php?id={$person['id']}&action=update' class='mr-2 btn btn-outline-info round'>แก้ไข</a>
+                    <td>";
+                    if($person['id']>1){
+                    echo  "<a href='showEditPerson.php?id={$person['id']}&action=update' class='mr-2 btn btn-outline-info round'>แก้ไข</a>
                       <button type='button' data-id='{$person['id']}'  class='btn btn-outline-danger round' onclick='confirmDelete(this);'  data-toggle='modal' data-target='#del' >ลบ</button>
                       <a href='showEditRole.php?id={$person['id']}' class='btn btn-outline-primary round' >สิทธิ์</a>
-                      <a href='showEditPass.php?id={$person['id']}&action=repassword' class='btn btn-outline-warning round' >รหัสผ่าน</a>
-                    </td>
+                      <a href='showEditPass.php?id={$person['id']}&action=repassword' class='btn btn-outline-warning round' >รหัสผ่าน</a>";
+                    }  
+                    echo "</td>
                   </tr>
                 ";
               }

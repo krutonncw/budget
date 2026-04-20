@@ -56,7 +56,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
               $n = 0;
               foreach ($persons as $person) {
                 $n++;
-                $avatar = ($person['avatar'] != "") ? $person['avatar'] : "../../assets/images/avatar/femalavatar.svg";
+                $avatar = ($person['avatar'] != "") ? $person['avatar'] : "../../assets/images/avatar/avatar.png";
                 echo "
 											<tr>
 												<td>{$n}</td>

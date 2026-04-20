@@ -63,12 +63,14 @@ class User extends Db
 				person_id,
 				username,
 				email,
-				password
+				password,
+				role
 			) VALUES (
 				:person_id,
 				:username,
 				:email,
-				:password				
+				:password,				
+				:role				
 			)
 		";
 			$stmt = $this->pdo->prepare($sql);

@@ -6,7 +6,7 @@ if (!$_SESSION['login']) {
 	exit;
 } else {
 	// ตรวจสอบว่า สถานะรออนุมัติเปล่า
-	if ($_SESSION['role'] == 4) {
+	if ($_SESSION['role'] == 9) {
 		$_SESSION = [];
 		header("location: /budget/App/Auth/Views/status_login.php");
 		exit;

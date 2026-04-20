@@ -200,6 +200,7 @@ class PayPlan extends Db
       activity.pro_id, 
       activity.act_money,
       activity.act_balance,
+      project.pro_code,
       project.pro_name,
       project.pro_user,
       project.dep_id,
