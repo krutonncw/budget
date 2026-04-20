@@ -1,9 +1,9 @@
 <?php
-// เรียกใช้งานไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+// เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
+require_once "../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 //ตรวจสอบระดับของสิทธิ์ว่าเป็น admin เปล่าหน้านี้เฉพาะ admin เท่านั้น
 if ($_SESSION['role'] > 2) {
@@ -22,8 +22,8 @@ $payplan = $payplanObj->getPayOrderToReport($_REQUEST);
 //$lastpayObj = new Payplan;
 //$lastpay = $lastpayObj->getLastPayOrder();
 
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 ?>
 

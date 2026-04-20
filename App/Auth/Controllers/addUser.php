@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+require_once "../../../config.php";
 
 use Ncw\Auth\Models\User;
 

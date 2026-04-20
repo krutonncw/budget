@@ -3,5 +3,5 @@ session_start();
 
 $_SESSION = [];
 
-header("location: /budget/index.php");
+header("location: ../../../index.php");
 ?>

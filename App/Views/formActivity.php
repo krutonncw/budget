@@ -1,5 +1,7 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/ncwbu dget/vendor/autoload.php";
+// เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
+require_once "../../config.php";
+
 
 use Ncw\Models\Project;
 use Ncw\Models\BudgetType;

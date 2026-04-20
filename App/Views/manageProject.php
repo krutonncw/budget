@@ -1,15 +1,15 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+require_once "../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 use Ncw\Models\Project;
 use Ncw\Models\Department;
 
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 $projectObj = new Project();
 $projects = $projectObj->getAllProjects();
@@ -64,8 +64,9 @@ $departments = $departmentObj->getAllDepartments();
                             $n++;
                             echo "
                 <tr>
-                  <td>{$n}</td>
+                <!-- <td>{$n}</td> -->
                   <td>{$project['pro_id']}</td>
+                  <td>{$project['pro_code']}</td>
                   <td>{$project['pro_name']}</td>
                   <td>{$project['dep_name']}</td>
                   <td>
@@ -200,4 +201,4 @@ $departments = $departmentObj->getAllDepartments();
 <?php } ?>
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>
+<?php require_once BASE_PATH . "/App/Inc/footer.php"; ?>

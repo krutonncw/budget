@@ -1,8 +1,9 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+// เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
+require_once "../../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 use Ncw\Models\Department;
 ?>
@@ -18,7 +19,7 @@ use Ncw\Models\Department;
   <!-- <link rel="stylesheet" href="/budget/assets/css/bootstrap.css"> -->
   <!-- <link rel="stylesheet" href="/budget/assets/css/app.css"> -->
   <!-- ใส่ icon บนแถบ title bar -->
-  <link rel="shortcut icon" href="/budget/assets/images/budgetIcon.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="<?= BASE_URL ?>/assets/images/budgetIcon.svg" type="image/x-icon">
   <title>NAbudget</title>
 </head>
 

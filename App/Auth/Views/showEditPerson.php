@@ -1,9 +1,9 @@
 <?php
-// เรียกใช้งานไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+// เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
+require_once "../../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 // นำเข้า Model เพื่อใช้ตารางในฐานข้อมูล
 use Ncw\Auth\Models\Person;
@@ -11,8 +11,8 @@ use Ncw\Models\Department;
 use Ncw\Models\Ref;
 
 // นำเข้าส่วนหัวและเมนูของ page
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 
 // อ่านข้อมูลเข้ามาแก้ไข
@@ -37,7 +37,7 @@ $refs = $refsObj->getRefsAll();
           แบบฟอร์ม<?php echo ($_REQUEST['action'] == 'update') ? "แก้ไขข้อมูลสมาชิก" : "เพิ่มสมาชิกใหม่"; ?></h4>
       </div>
       <div class="card-content">
-        <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($person['avatar'] != "") ? $person['avatar'] : "/budget/assets/images/avatar/femalavatar.svg"; ?> alt="Card image cap"
+        <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($person['avatar'] != "") ? $person['avatar'] : "../../../assets/images/avatar/avatar.png"; ?> alt="Card image cap"
           style="width: 200px;height:200px; text-align: center; margin-top:10px;" />
         <div class="card-body">
           <form action="../Controllers/updateAuth.php" class="form form-vertical" method="post"
@@ -155,4 +155,4 @@ $refs = $refsObj->getRefsAll();
 <!-- จบส่วนของ modal -->
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>
+<?php require_once BASE_PATH . "/App/Inc/footer.php"; ?>

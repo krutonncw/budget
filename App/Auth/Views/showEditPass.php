@@ -1,17 +1,17 @@
 <?php
-// เรียกใช้งานไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+// เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
+require_once "../../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 // นำเข้า Model เพื่อใช้ตารางในฐานข้อมูล
 use Ncw\Auth\Models\Person;
 use Ncw\Auth\Models\User;
 
 // นำเข้าส่วนหัวและเมนูของ page
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 ?>
 
@@ -80,4 +80,4 @@ if ($_REQUEST['action'] == 'repassword') {
 
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/ncwbudget/App/Inc/footer.php"; ?>
+<?php require_once BASE_PATH . "/App/Inc/footer.php"; ?>

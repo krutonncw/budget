@@ -11,6 +11,7 @@ class Project extends Db
     $sql = "
       SELECT
         project.pro_id,
+        project.pro_code,
         project.pro_name,
         project.dep_id,
         department.dep_name

@@ -32,29 +32,29 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-info round" data-dismiss="modal">ยกเลิก</button>
-                <a class="btn btn-outline-warning round" href="/budget/App/Auth/Views/logout.php">ตกลง</a>
+                <a class="btn btn-outline-warning round" href="<?=  BASE_URL ?>/App/Auth/Views/logout.php">ตกลง</a>
             </div>
         </div>
     </div>
 </div>
 <!-- จบ modal -->
 
-<!-- <script src="/budget/assets/js/bootstrap.js"></script>
-<script src="/budget/assets/js/bootstrap.esm.min.js"></script> -->
-<script src="/budget/assets/js/feather-icons/feather.min.js"></script>
-<script src="/budget/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-<!-- <script src="/budget/assets/js/app.js"></script> -->
-<script src="/budget/assets/js/bootstrap.js"></script>
+<!-- <script src="<?=  BASE_URL ?>/assets/js/bootstrap.js"></script>
+<script src="<?=  BASE_URL ?>/assets/js/bootstrap.esm.min.js"></script> -->
+<script src="<?=  BASE_URL ?>/assets/js/feather-icons/feather.min.js"></script>
+<script src="<?=  BASE_URL ?>/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<!-- <script src="<?=  BASE_URL ?>/assets/js/app.js"></script> -->
+<script src="<?=  BASE_URL ?>/assets/js/bootstrap.js"></script>
 
-<script src="/budget/assets/vendors/chartjs/Chart.min.js"></script>
-<script src="/budget/assets/vendors/apexcharts/apexcharts.min.js"></script>
+<script src="<?=  BASE_URL ?>/assets/vendors/chartjs/Chart.min.js"></script>
+<script src="<?=  BASE_URL ?>/assets/vendors/apexcharts/apexcharts.min.js"></script>
 
-<script src="/budget/assets/js/pages/dashboard.js"></script>
+<script src="<?=  BASE_URL ?>/assets/js/pages/dashboard.js"></script>
 
-<script src="/budget/assets/vendors/simple-datatables/simple-datatables.js"></script>
-<script src="/budget/assets/js/vendors.js"></script>
+<script src="<?=  BASE_URL ?>/assets/vendors/simple-datatables/simple-datatables.js"></script>
+<script src="<?=  BASE_URL ?>/assets/js/vendors.js"></script>
 
-<script src="/budget/assets/js/main.js"></script>
+<script src="<?=  BASE_URL ?>/assets/js/main.js"></script>
 
 <!-- script สำหรับปิด การแจ้งเตือน alert -->
 <!-- <script>

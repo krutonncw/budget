@@ -1,9 +1,9 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+require_once "../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 // นำเข้า Model เพื่อใช้ตารางในฐานข้อมูล
 use Ncw\Models\Activity;
@@ -44,8 +44,8 @@ $paySum = $paySumObj->getPayGraph();
 // $totalpay += $p['sum'];
 
 // นำเข้าส่วนหัวและเมนูของ page
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 ?>
 
@@ -226,4 +226,4 @@ require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
 </script>
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>
+<?php require_once BASE_PATH . "/App/Inc/footer.php"; ?>

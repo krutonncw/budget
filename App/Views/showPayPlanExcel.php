@@ -1,15 +1,15 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+require_once "../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 use Ncw\Models\PayPlan;
 use Ncw\Models\ThaiTime;
 
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-//require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+//require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 // สำหรับ export to excel
 if (isset($_GET['act'])) {
@@ -120,4 +120,4 @@ if (isset($_GET['act'])) {
 <!-- จบส่วนของ modal -->
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>
+<?php require_once BASE_PATH . "/App/Inc/footer.php"; ?>

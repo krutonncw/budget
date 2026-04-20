@@ -1,6 +1,6 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require __DIR__ . "/vendor/autoload.php";
+require_once "config.php";
 
 use Ncw\Models\Department;
 
@@ -13,9 +13,9 @@ use Ncw\Models\Department;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/assets/css/style.css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css" />
     <!-- ใส่ icon บนแถบ title bar -->
-    <link rel="shortcut icon" href="<?php echo $base_url; ?>/assets/images/budgetIcon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>/assets/images/budgetIcon.svg" type="image/x-icon">
     <title>NAbudget</title>
 </head>
 
@@ -128,7 +128,7 @@ use Ncw\Models\Department;
                         ลงทะเบียนใหม่
                     </button>
                 </div>
-                <img src="<?php echo $base_url; ?>/assets/images/log.svg" class="image" alt="" />
+                <img src="<?php echo BASE_URL ?>/assets/images/log.svg" class="image" alt="" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -140,12 +140,12 @@ use Ncw\Models\Department;
                         ลงชื่อเข้าใช้
                     </button>
                 </div>
-                <img src="<?php echo $base_url; ?>/assets/images/register.svg" class="image" alt="" />
+                <img src="<?php echo BASE_URL ?>/assets/images/register.svg" class="image" alt="" />
             </div>
         </div>
     </div>
 
-    <script src="<?php echo $base_url; ?>/assets/js/login.js"></script>
+    <script src="<?php echo BASE_URL ?>/assets/js/login.js"></script>
 </body>
 
 </html>

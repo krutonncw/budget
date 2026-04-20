@@ -1,17 +1,17 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+require_once "../../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 // นำเข้า Model เพื่อใช้ตารางในฐานข้อมูล
 use Ncw\Auth\Models\Person;
 use Ncw\Auth\Models\User;
 
 // นำเข้าส่วนหัวและเมนูของ page
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/sidebar.php";
+require_once BASE_PATH . "/App/Inc/header.php";
+require_once BASE_PATH . "/App/Inc/sidebar.php";
 
 ?>
 
@@ -31,7 +31,7 @@ $user = $userObj->getUserById($_GET['id']);
   <div class="col-md-8 col-sm-12">
     <div class="card">
       <div class="card-content">
-        <img class="card-img-top rounded mx-auto d-block" <?php echo "src=/budget/assets/images/avatar/" . $retVal = ($persons['avatar'] != "") ? $persons['avatar'] : "femalavatar.svg"; ?> alt="Card image cap"
+        <img class="card-img-top rounded mx-auto d-block" <?php echo "src=../../../assets/images/avatar/" . $retVal = ($persons['avatar'] != "") ? $persons['avatar'] : "femalavatar.svg"; ?> alt="Card image cap"
           style="width: 200px;height:200px; text-align: center; margin-top:10px;" />
         <div class="card-body">
           <h4 class="card-title" style="font-size: 2rem;">ข้อมูลสมาชิก</h4>
@@ -138,4 +138,4 @@ $user = $userObj->getUserById($_GET['id']);
 
 
 <!-- นำเข้าส่วน footer page -->
-<?php require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Inc/footer.php"; ?>
+<?php require_once BASE_PATH . "/App/Inc/footer.php"; ?>

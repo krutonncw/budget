@@ -1,9 +1,9 @@
 <?php
 // เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+require_once "../../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/App/Auth/Controllers/auth.php";
+require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 // สำหรับไว้ตรวจสอบ error
 error_reporting(E_ALL);
@@ -22,7 +22,7 @@ if (isset($_FILES['avatar']['tmp_name'])) {
 		$ext = end(explode(".", $_FILES['avatar']['name']));
 
 		// กำหนดชื่อให้ใหม่ไม่ซ้ำกันแบบเข้ารหัสแทน จากนั้นเชื่อมกับนามสกุล
-		$avatar = "/budget/assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
+		$avatar = "../../../assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
 		// จากนั้นส่งไฟล์ไปเก็บ
 		move_uploaded_file($_FILES['avatar']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $avatar);
 	}

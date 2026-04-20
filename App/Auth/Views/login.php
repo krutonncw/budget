@@ -1,5 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/budget/vendor/autoload.php";
+// เรียกใช้งาน ไฟล์ autoload เพือให้โหลดคลาสต่าง ๆ มาทำงาน
+require_once "../../../config.php";
 error_reporting(error_reporting() & ~E_NOTICE);
 ?>
 
@@ -11,7 +12,7 @@ error_reporting(error_reporting() & ~E_NOTICE);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/ncwbudget/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/bootstrap.css">
 </head>
 
 <body>
