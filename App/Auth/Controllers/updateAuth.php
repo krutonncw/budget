@@ -13,7 +13,7 @@ use Ncw\Auth\Models\Person;
 use Ncw\Auth\Models\User;
 
 // var_dump($_FILES);
-// echo $_FILES['upload']['tmp_name'];
+// echo $_FILES['upload']['tmp_name']; exit;
 
 if (isset($_FILES['avatar']['tmp_name'])) {
 
@@ -22,7 +22,8 @@ if (isset($_FILES['avatar']['tmp_name'])) {
 		$ext = end(explode(".", $_FILES['avatar']['name']));
 
 		// กำหนดชื่อให้ใหม่ไม่ซ้ำกันแบบเข้ารหัสแทน จากนั้นเชื่อมกับนามสกุล
-		$avatar = "../../../assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
+		// $avatar = "../../../assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
+		$avatar = BASE_URL."/assets/images/avatar/" . md5(uniqid()) . ".{$ext}";
 		// จากนั้นส่งไฟล์ไปเก็บ
 		move_uploaded_file($_FILES['avatar']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . $avatar);
 	}

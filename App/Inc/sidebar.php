@@ -119,7 +119,7 @@
                                         <a href='". BASE_URL . "/App/Views/showPayBill.php'>จัดการสถานะการเบิก</a>
                                     </li>  
                                     <li>
-                                        <a href='". BASE_URL . "/App/views/searchEditPayBill.php'>จัดการการจ่ายเงิน</a>
+                                        <a href='". BASE_URL . "/App/Views/searchEditPayBill.php'>จัดการการจ่ายเงิน</a>
                                     </li>
                                     </ul>
                                 </li>
