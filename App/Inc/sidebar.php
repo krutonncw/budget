@@ -184,7 +184,7 @@
                                             <a href='". BASE_URL . "/App/Auth/Views/showPerson.php'>ข้อมูลสมาชิก</a>
                                         </li>
                                         <li>
-                                            <a href='". BASE_URL . "/App/Auth/Views/register.php'>เพิ่มสมาชิก</a>
+                                            <a href='". BASE_URL . "/App/Auth/Views/addPerson.php'>เพิ่มสมาชิก</a>
                                         </li>  
                                     </ul>
                                 </li>
@@ -241,8 +241,8 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" <?php echo 'href="". BASE_URL . "/App/Auth/Views/showEditPerson.php?id=' . $_SESSION['id'] . '&action=update' . '"'; ?>><i data-feather="user"></i> แก้ไขข้อมูล</a>
-                                <a class="dropdown-item " <?php echo 'href="". BASE_URL . "/App/Auth/Views/showEditPass.php?id=' . $_SESSION['id'] . '&action=repassword' . '"'; ?>><i data-feather="lock"></i>
+                                <a class="dropdown-item" <?php echo "href=". BASE_URL . "/App/Auth/Views/showEditPerson.php?id=" . $_SESSION['id'] . "&action=update"; ?>><i data-feather="user"></i> แก้ไขข้อมูล</a>
+                                <a class="dropdown-item " <?php echo "href=". BASE_URL . "/App/Auth/Views/showEditPass.php?id=" . $_SESSION['id'] . "&action=repassword"; ?>><i data-feather="lock"></i>
                                     เปลี่ยนรหัสผ่าน</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i

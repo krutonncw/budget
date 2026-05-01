@@ -63,7 +63,13 @@ if ($_REQUEST['action'] == 'repassword') {
                 <input type="hidden" id="custId" name="id" <?php echo "value={$user['id']}"; ?>>
                 <input type="hidden" name="action" value="repassword">
                 <div class="col-12 d-flex justify-content-end">
-                  <a href='../../Views/showGroupCard.php' class='btn btn-outline-warning round mr-2'>ยกเลิก</a>
+                  <?php if ($_SESSION['role'] == 1) {
+                    echo "<a href='showPerson.php' class='btn btn-outline-warning round mr-2'>ยกเลิก</a>";
+                 
+                  }
+                  else {
+                    echo "<a href='../../Views/showGroupCard.php' class='btn btn-outline-warning round mr-2'>ยกเลิก</a>";
+                  } ?>
                   <button type="submit" class="btn btn-outline-primary round">บันทึก</button>
                 </div>
               </div>

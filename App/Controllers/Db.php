@@ -22,6 +22,12 @@ class Db {
   // private $password = "nongwit23";
   // private $dbName = "ncwschoo_budget";
 
+  // // บนเว็บ theskru
+  // private $host = "localhost";
+  // private $user = "theskruc_naacth";
+  // private $password = "na@budget";
+  // private $dbName = "theskruc_nabudget";
+
   protected $pdo;
 
   function __construct() {

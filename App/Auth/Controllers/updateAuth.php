@@ -65,7 +65,12 @@ if ($_REQUEST['action'] == "setAuth") {
 		$person['avatar'] = $avatar;
 	}
 	if ($personObj->updatePerson($person)) {
-		header("location: ../../Views/showGroupCard.php");
+		if ($_SESSION['role'] == 1) {
+			header("location: ../Views/showPerson.php");
+		}
+		else{
+			header("location: ../../Views/showGroupCard.php");	
+		}
 	} else {
 		header("location: ../Views/error.php");
 	}

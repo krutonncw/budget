@@ -108,7 +108,7 @@ use Ncw\Models\Department;
   </form>
 
   <div style="text-align: center;">
-    <button class="btn"><a href="/budget/App/Views/showGroupCard.php">กลับ</a></button>
+    <button class="btn"><a href="<?= BASE_URL ?>/App/Views/showGroupCard.php">กลับ</a></button>
   </div>
 </body>
 
