@@ -3,13 +3,13 @@
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header" style="text-align:center">
-                    <img src="<?=  BASE_URL ?>/assets/images/logo_main.png" alt="" srcset="" style="width: 150px;height:150px;">
+                    <img src="<?= BASE_URL ?>/assets/images/logo_main.png" alt="" srcset="" style="width: 150px;height:150px;">
                 </div>
                 <div class="">
                     <ul class="menu">
                         <li class='sidebar-title'>ปีการศึกษา 2569</li>
                         <li class="sidebar-item ">
-                            <a href="<?=  BASE_URL ?>/App/Views/showGroupCard.php" class='sidebar-link'>
+                            <a href="<?= BASE_URL ?>/App/Views/showGroupCard.php" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
                                 <span>ภาพรวมการใช้เงิน</span>
                             </a>
@@ -52,16 +52,16 @@
 
                                 <ul class='submenu '>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/formPayPlan.php'>ใบคำขออนมุติใช้เงิน</a>
+                                        <a href='" . BASE_URL . "/App/Views/formPayPlan.php'>ใบคำขออนมุติใช้เงิน</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showPayPlan.php'>ข้อมูลการเบิก</a>
+                                        <a href='" . BASE_URL . "/App/Views/showPayPlan.php'>ข้อมูลการเบิก</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <!-- <li class='sidebar-item'>
-                                <a href='". BASE_URL . "/document/แบบสรุปโครงการ2564.docx' class='sidebar-link'>
+                                <a href='" . BASE_URL . "/document/แบบสรุปโครงการ2564.docx' class='sidebar-link'>
                                     <i data-feather='triangle' width='20'></i>
                                     <span>แบบสรุปโครงการปี 2564</span>
                                 </a>
@@ -82,7 +82,7 @@
                             </li> -->
 
                             <li class='sidebar-item'>
-                                <a href='". BASE_URL . "/App/Views/manageActivity.php' class='sidebar-link'>
+                                <a href='" . BASE_URL . "/App/Views/manageActivity.php' class='sidebar-link'>
                                     <i data-feather='clipboard' width='20'></i>
                                     <span>จัดการข้อมูลกิจกรรม</span>
                                 </a>
@@ -96,7 +96,7 @@
                         if ($_SESSION['role'] == 1) {
                             echo "
                                 <li class='sidebar-item'>
-                                    <a href='". BASE_URL . "/App/Views/manageProject.php' class='sidebar-link'>
+                                    <a href='" . BASE_URL . "/App/Views/manageProject.php' class='sidebar-link'>
                                         <i data-feather='book' width='20'></i>
                                         <span>จัดการข้อมูลโครงการ</span>
                                     </a>
@@ -116,10 +116,10 @@
                                     </a>
                                     <ul class='submenu '>                                    
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showPayBill.php'>จัดการสถานะการเบิก</a>
+                                        <a href='" . BASE_URL . "/App/Views/showPayBill.php'>จัดการสถานะการเบิก</a>
                                     </li>  
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/searchEditPayBill.php'>จัดการการจ่ายเงิน</a>
+                                        <a href='" . BASE_URL . "/App/Views/searchEditPayBill.php'>จัดการการจ่ายเงิน</a>
                                     </li>
                                     </ul>
                                 </li>
@@ -138,31 +138,31 @@
                                     </a>
                                     <ul class='submenu '>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/formPayPlan.php'>เพิ่มข้อมูลการเบิก</a>
+                                        <a href='" . BASE_URL . "/App/Views/formPayPlan.php'>เพิ่มข้อมูลการเบิก</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/searchEditReport.php'>แก้ไขข้อมูลใบคำขอ</a>
+                                        <a href='" . BASE_URL . "/App/Views/searchEditReport.php'>แก้ไขข้อมูลใบคำขอ</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/searchEditMoney.php'>แก้ยอดเงินเบิก</a>
+                                        <a href='" . BASE_URL . "/App/Views/searchEditMoney.php'>แก้ยอดเงินเบิก</a>
                                     </li> 
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showGroupCard_admin.php'>ตรวจสอบยอดเงินรวม</a>
+                                        <a href='" . BASE_URL . "/App/Views/showGroupCard_admin.php'>ตรวจสอบยอดเงินรวม</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showProject_admin.php'>ตรวจสอบยอดเงินโครงการ</a>
+                                        <a href='" . BASE_URL . "/App/Views/showProject_admin.php'>ตรวจสอบยอดเงินโครงการ</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showActivity_admin.php'>ตรวจสอบยอดเงินกิจกรรม</a>
+                                        <a href='" . BASE_URL . "/App/Views/showActivity_admin.php'>ตรวจสอบยอดเงินกิจกรรม</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showProjectExcel.php' target='_blank'>Excel โครงการ</a>
+                                        <a href='" . BASE_URL . "/App/Views/showProjectExcel.php' target='_blank'>Excel โครงการ</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showActivityExcel.php' target='_blank'>Excel กิจกรรม</a>
+                                        <a href='" . BASE_URL . "/App/Views/showActivityExcel.php' target='_blank'>Excel กิจกรรม</a>
                                     </li>
                                     <li>
-                                        <a href='". BASE_URL . "/App/Views/showPayPlanExcel.php' target='_blank'>Excel ข้อมูลการเบิก</a>
+                                        <a href='" . BASE_URL . "/App/Views/showPayPlanExcel.php' target='_blank'>Excel ข้อมูลการเบิก</a>
                                     </li>
                                     </ul>
                                 </li>
@@ -181,16 +181,31 @@
                                     </a>
                                     <ul class='submenu '>
                                         <li>
-                                            <a href='". BASE_URL . "/App/Auth/Views/showPerson.php'>ข้อมูลสมาชิก</a>
+                                            <a href='" . BASE_URL . "/App/Auth/Views/showPerson.php'>ข้อมูลสมาชิก</a>
                                         </li>
                                         <li>
-                                            <a href='". BASE_URL . "/App/Auth/Views/addPerson.php'>เพิ่มสมาชิก</a>
+                                            <a href='" . BASE_URL . "/App/Auth/Views/addPerson.php'>เพิ่มสมาชิก</a>
                                         </li>  
                                     </ul>
                                 </li>
                                 ";
                         }
                         ?>
+
+                         <!-- เข้าถึงได้เฉพาะ ระดับ admin และ user id = 1 เท่านั้น -->
+                        <?php
+                        if ($_SESSION['role'] == 1 && $_SESSION['id'] == 1) {
+                            echo "                                
+                                <li class='sidebar-item'>
+                                    <a href='" . BASE_URL . "/App/Views/manageSetting.php' class='sidebar-link'>
+                                    <i data-feather='settings' width='20'></i>
+                                    <span>ตั้งค่าระบบ</span>
+                                    </a>
+                                </li>
+                                ";
+                        }
+                        ?>                        
+
                         <!-- <li class="sidebar-item ">
                             <a href="https://ncwschool.com/budget" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
@@ -234,15 +249,15 @@
                                     $avatarObj = new Person;
                                     $avatar = $avatarObj->getPersonById($_SESSION['id']);
                                     ?>
-                                    <img <?php echo "src=" . $retVal = ($avatar['avatar'] != "") ? $avatar['avatar'] : "". BASE_URL . "/assets/images/avatar/avatar.png"; ?> alt="Card image cap"
+                                    <img <?php echo "src=" . $retVal = ($avatar['avatar'] != "") ? $avatar['avatar'] : "" . BASE_URL . "/assets/images/avatar/avatar.png"; ?> alt="Card image cap"
                                         style="width:60px;" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi,<?php echo $_SESSION['username']; ?>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" <?php echo "href=". BASE_URL . "/App/Auth/Views/showEditPerson.php?id=" . $_SESSION['id'] . "&action=update"; ?>><i data-feather="user"></i> แก้ไขข้อมูล</a>
-                                <a class="dropdown-item " <?php echo "href=". BASE_URL . "/App/Auth/Views/showEditPass.php?id=" . $_SESSION['id'] . "&action=repassword"; ?>><i data-feather="lock"></i>
+                                <a class="dropdown-item" <?php echo "href=" . BASE_URL . "/App/Auth/Views/showEditPerson.php?id=" . $_SESSION['id'] . "&action=update"; ?>><i data-feather="user"></i> แก้ไขข้อมูล</a>
+                                <a class="dropdown-item " <?php echo "href=" . BASE_URL . "/App/Auth/Views/showEditPass.php?id=" . $_SESSION['id'] . "&action=repassword"; ?>><i data-feather="lock"></i>
                                     เปลี่ยนรหัสผ่าน</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i

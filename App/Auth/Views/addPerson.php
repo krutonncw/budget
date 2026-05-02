@@ -33,7 +33,7 @@ $departments = $departmentObj->getAllDepartments();
       </div>
       <div class="card-content">
         <div class="card-body">
-          <form action="../Controllers/addPerson.php" class="form form-vertical" method="GET" name="new"
+          <form action="../Controllers/addPerson.php" class="form form-vertical" method="POST" name="new"
             enctype="multipart/form-data">
             <div class=" form-body">
               <div class="row">
