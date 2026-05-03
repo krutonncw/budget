@@ -32,10 +32,10 @@ $settings = $settingObj->getSetting();
                     <form action="../Controllers/updateSetting.php" class="form form-vertical" method="post"
                         enctype="multipart/form-data">
                         <div class=" form-body">
-                            <div class="row">
-                                <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($settings['logo_url'] != "") ? BASE_URL.$settings['logo_url'] : BASE_URL."/assets/images/logo/logo_main.png"; ?> alt="Logo Main"
+                             <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($settings['logo_url'] != "") ? BASE_URL.$settings['logo_url'] : BASE_URL."/assets/images/logo/logo_main.png"; ?> alt="Logo Main"
                                     style="width: 200px; text-align: center; margin-top:10px;" />
-                                <div class="col-12">
+                            <div class="row">                               
+                                <div class="col-6">
                                     <div class="form-group has-icon-left">
                                         <label for="first-name-icon">ชื่อระบบ</label>
                                         <div class="position-relative">
@@ -44,6 +44,19 @@ $settings = $settingObj->getSetting();
                                                                 echo 'value="' . $retVal . '"'; ?>>
                                             <div class="form-control-icon">
                                                 <i data-feather="layout"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">แผนปฏิบัติการประจำ</label>
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control round" placeholder="ปีการศึกษา/ปีงบประมาณ" id="first-name-icon"
+                                                name="year_name" <?php $retVal = ($settings['year_name'] == "") ? "" : $settings['year_name'];
+                                                                    echo 'value="' . $retVal . '"'; ?>>
+                                            <div class="form-control-icon">
+                                                <i data-feather="book"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -61,6 +74,19 @@ $settings = $settingObj->getSetting();
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12">
+                                    <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">ส่วนราชการ</label>
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control round" placeholder="ชื่อส่วนราชการ" id="first-name-icon"
+                                                name="title_name" <?php $retVal = ($settings['title_name'] == "") ? "" : $settings['title_name'];
+                                                                    echo 'value="' . $retVal . '"'; ?>>
+                                            <div class="form-control-icon">
+                                                <i data-feather="file-text"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for="first-name-icon">ชื่อผู้อำนวยการโรงเรียน</label>

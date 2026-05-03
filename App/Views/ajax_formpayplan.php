@@ -1,14 +1,14 @@
 <?php
-require_once BASE_PATH . "../../config.php";
+require_once "../../config.php";
 
 //ตรวจสอบว่าเข้าสู่ระบบหรือยัง
 require_once BASE_PATH . "/App/Auth/Controllers/auth.php";
 
 // บน XAMPP
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbName = "na_budget";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbName = "na_budget";
 
 // บนเว็บ ncwschool
 // $servername = "localhost";
@@ -16,11 +16,17 @@ $dbName = "na_budget";
 // $password = "na2569";
 // $dbName = "na_budget";
 
+// บนเว็บ theskru
+$servername = "localhost";
+$username = "theskruc_naacth";
+$password = "na@budget";
+$dbName = "theskruc_nabudget";
+
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
@@ -44,6 +50,20 @@ if (isset($_POST['function']) && $_POST['function'] == 'activity') {
     foreach ($stmt as $value) {
         echo '<option value="' . $value['act_id'] . '">' . $value['act_name'] . '</option>';
     }
+    exit();
+}
+
+if (isset($_POST['function']) && $_POST['function'] == 'balance') {
+    $id = $_POST['id'];
+    $stmt = $conn->prepare("SELECT act_money FROM activity WHERE act_id = '$id'");
+    $stmt->execute();
+    $activity = $stmt->fetch();
+    $act_money = $activity['act_money'];
+    $stmt2 = $conn->prepare("SELECT SUM(pay_money) as sum_pay FROM payplan WHERE act_id = '$id'");
+    $stmt2->execute();
+    $sum_pay = $stmt2->fetch()['sum_pay'] ?? 0;
+    $balance = $act_money - $sum_pay;
+    echo number_format($balance, 2);
     exit();
 }
 

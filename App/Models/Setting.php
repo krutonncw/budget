@@ -14,7 +14,10 @@ class Setting extends Db
 		  setting.sys_name,
 		  setting.school_name,
 		  setting.logo_url,
+		  setting.title_name,
+		  setting.year_name,
 		  setting.dir_name,
+		  setting.man_name,
 		  setting.plan_name,
 		  setting.menu_project,
 		  setting.menu_activity

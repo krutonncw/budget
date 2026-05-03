@@ -35,7 +35,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-12 order-md-1 order-last">
-                <h3>งบประมาณของโรงเรียนนิยมศิลป์อนุสรณ์ ปีการศึกษา 2569</h3>
+                <h3>งบประมาณของ<?= htmlspecialchars($settings['school_name']." ".$settings['year_name']) ?></h3>
             </div>
         </div>
     </div>

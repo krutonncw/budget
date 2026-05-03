@@ -1,13 +1,21 @@
+<?php
+
+use Ncw\Models\Setting;
+
+$settingObj = new Setting();
+$settings = $settingObj->getSetting();
+?>
+
 <body>
     <div id="app">
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header" style="text-align:center">
-                    <img src="<?= BASE_URL ?>/assets/images/logo_main.png" alt="" srcset="" style="width: 150px;height:150px;">
+                    <img src="<?= BASE_URL . $settings['logo_url']?>" alt="" srcset="" style="width: 150px;height:150px;">
                 </div>
                 <div class="">
                     <ul class="menu">
-                        <li class='sidebar-title'>ปีการศึกษา 2569</li>
+                        <li class='sidebar-title'><?= htmlspecialchars($settings['year_name']) ?></li>
                         <li class="sidebar-item ">
                             <a href="<?= BASE_URL ?>/App/Views/showGroupCard.php" class='sidebar-link'>
                                 <i data-feather="home" width="20"></i>
@@ -249,7 +257,7 @@
                                     $avatarObj = new Person;
                                     $avatar = $avatarObj->getPersonById($_SESSION['id']);
                                     ?>
-                                    <img <?php echo "src=" . $retVal = ($avatar['avatar'] != "") ? $avatar['avatar'] : "" . BASE_URL . "/assets/images/avatar/avatar.png"; ?> alt="Card image cap"
+                                    <img <?php echo "src=" . $retVal = ($avatar['avatar'] != "") ? $avatar['avatar'] : "" . BASE_URL . "/assets/images/avatar/avatar.svg"; ?> alt="Card image cap"
                                         style="width:60px;" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi,<?php echo $_SESSION['username']; ?>

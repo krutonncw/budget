@@ -25,11 +25,13 @@ $departments = $departmentObj->getAllDepartments();
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>จัดการข้อมูลโครงการ</h3>
             </div>
-            <div class="col-12 col-md-6 order-md-2 order-first text-md-right">
-                <button class="btn btn-success round" data-toggle="modal" data-target="#addProjectModal">
-                    <i data-feather="plus-circle"></i> เพิ่มโครงการ
-                </button>
-            </div>
+            <?php if ($settings['menu_project'] == 1) { ?>
+                <div class="col-12 col-md-6 order-md-2 order-first text-md-right">
+                    <button class="btn btn-success round" data-toggle="modal" data-target="#addProjectModal">
+                        <i data-feather="plus-circle"></i> เพิ่มโครงการ
+                    </button>
+                </div>
+            <?php } ?>
         </div>
     </div>
 

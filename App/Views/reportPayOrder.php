@@ -12,6 +12,10 @@ use Ncw\Models\PayPlan;
 use Ncw\Models\ThaiTime;
 use Ncw\Models\ThaiBath;
 use Ncw\Models\Ref;
+use Ncw\Models\Setting;
+
+$settingObj = new Setting();
+$settings = $settingObj->getSetting();
 
 ?>
 
@@ -76,7 +80,7 @@ ob_start();
 
 <html>
 <header>
-  <title>แบบขออนุมัติใช้เงินตามแผนปฏิบัติการปีการศึกษา</title>
+  <title>แบบขออนุมัติใช้เงินตามแผนปฏิบัติการ</title>
 
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
@@ -125,7 +129,8 @@ ob_start();
 
     <tr>
       <td colspan="2">
-        <span style="font-size: 20pt; font-weight: bold;">ส่วนราชการ </span><span>โรงเรียนนิยมศิลป์อนุสรณ์ อำเภอวิเชียรบุรี จังหวัดเพชรบูรณ์ 67130</span>
+        <!-- <span style="font-size: 20pt; font-weight: bold;">ส่วนราชการ </span><span>โรงเรียนนิยมศิลป์อนุสรณ์ อำเภอวิเชียรบุรี จังหวัดเพชรบูรณ์ 67130</span> -->
+        <span style="font-size: 20pt; font-weight: bold;">ส่วนราชการ </span><span><?php echo htmlspecialchars($settings['title_name']); ?></span>
       </td>
     </tr>
 
@@ -142,7 +147,7 @@ ob_start();
     <tr>
       <td colspan="2" style="border-bottom: 1px solid black ;">
         <span style="font-size: 20pt; font-weight: bold;">เรื่อง
-        </span><span>ขออนุมัติจัดกิจกรรมและใช้เงินตามแผนปฏิบัติการประจำปีการศึกษา 2569</span>
+        </span><span>ขออนุมัติจัดกิจกรรมและใช้เงินตามแผนปฏิบัติการประจำ<?= $settings['year_name'] ?></span>
       </td>
     </tr>
 
@@ -153,13 +158,14 @@ ob_start();
     </tr>-->
 
     <tr>
-      <td colspan="2">เรียน ผู้อำนวยการโรงเรียนนิยมศิลป์อนุสรณ์</td>
+      <td colspan="2">เรียน ผู้อำนวยการ<?= $settings['school_name'] ?></td>
     </tr>
 
     <tr>
       <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         ด้วย<?php echo $payplans['dep_name']; ?> มีความประสงค์ที่จะขอ<?php echo $RefTitle['title']; ?>
-        <?php echo $payplans['pay_objective']; ?> ตามแผนปฏิบัติการประจำปี 2569
+        <!-- <?php echo $payplans['pay_objective']; ?> ตามแผนปฏิบัติการประจำ<?= $settings['year_name'] ?> -->
+        <?php echo $payplans['pay_objective']; ?> ตามแผนปฏิบัติการ 
         โครงการ<?php echo $payplans['pro_name']; ?> - <?php echo $payplans['act_name']; ?> เป็นจำนวนเงิน
         <?php echo number_format($payplans['pay_money'], 2); ?> บาท (<?php echo $thaibath; ?>)
         <!-- <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -234,7 +240,7 @@ ob_start();
           <tr>
             <td style="text-align: center;">
               ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นายกฤษฎิ์ไกรวิชญ์ จันทรัตน์)<br>
+              (<?= $settings['plan_name'] ?>)<br>
               <!-- (............................................)<br> -->
               ........../.................../..........
             </td>
@@ -255,7 +261,7 @@ ob_start();
           <tr>
             <td style="text-align: center;">
               ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นางสาวธนภรณ์ เชื้อเพ็ง)<br>
+              (<?= $settings['man_name'] ?>)<br>
               ........../.................../..........
             </td>
           </tr>
@@ -270,8 +276,8 @@ ob_start();
           <tr>
             <td style="text-align: center;">
               ลงชื่อ ..............................................&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-              (นายธนัญชัย พรหมภักดี)<br>
-              ผู้อำนวยการโรงเรียนนิยมศิลป์อนุสรณ์<br>
+              (<?= $settings['dir_name'] ?>)<br>
+              ผู้อำนวยการ<?= $settings['school_name'] ?><br>
               ........../.................../..........
             </td>
           </tr>

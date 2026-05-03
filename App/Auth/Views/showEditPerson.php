@@ -40,7 +40,7 @@ $refs = $refsObj->getRefByGroup($group_id);
           แบบฟอร์ม<?php echo ($_REQUEST['action'] == 'update') ? "แก้ไขข้อมูลสมาชิก" : "เพิ่มสมาชิกใหม่"; ?></h4>
       </div>
       <div class="card-content">
-        <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($person['avatar'] != "") ? $person['avatar'] : "../../../assets/images/avatar/avatar.png"; ?> alt="Card image cap"
+        <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($person['avatar'] != "") ? $person['avatar'] : "../../../assets/images/avatar/avatar.svg"; ?> alt="Card image cap"
           style="width: 200px;height:200px; text-align: center; margin-top:10px;" />
         <div class="card-body">
           <form action="../Controllers/updateAuth.php" class="form form-vertical" method="post"

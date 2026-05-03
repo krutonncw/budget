@@ -50,7 +50,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
               $n = 0;
               foreach ($persons as $person) {
                 $n++;
-                $avatar = ($person['avatar'] != "") ? $person['avatar'] : "../../../assets/images/avatar/avatar.png";
+                $avatar = ($person['avatar'] != "") ? $person['avatar'] : "../../../assets/images/avatar/avatar.svg";
                 echo "
                   <tr>
                     <td>{$n}</td>

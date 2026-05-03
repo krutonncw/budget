@@ -4,7 +4,7 @@
             <p>หากมีข้อส่งสัยเรื่องงบประมาณกรุณาติดต่องานนโยบายและแผน</p>
         </div>
         <div class="float-right">
-            <p>2026 &copy; NAbudget <span class='text-danger'><i data-feather="heart"></i></span> by <a
+            <p>2026 &copy; <?= htmlspecialchars($settings['sys_name']) ?> <span class='text-danger'><i data-feather="heart"></i></span> by <a
                     href="#">งานนโยบายและแผน</a> V.1.0</p>
         </div>
     </div>

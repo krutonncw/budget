@@ -32,25 +32,24 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
   <div class="col-md-8 col-sm-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title" style="font-size: 1.5rem;">แก้ข้อมูลใบคำขอ</h4>
+        <h4 class="card-title" style="font-size: 1.5rem;">แก้ข้อมูลใบคำขอ <?php echo str_pad($payplan['pay_order'], 3, '0', STR_PAD_LEFT ). "-" . $payplan['pro_code']; ?></b></h4>
       </div>
       <div class="card-content">
 
         <div class="card-body">
           <form action="../Controllers/editPayPlan.php" class="form form-vertical" method="POST">
-            <div class="col-12">
+            <!-- <div class="col-12">
               <div class="form-group has-icon-left">
                 <label for="mobile-id-icon">
-                  <h4><span
-                      class="bage bg-info round mx-2 px-2"><?php echo $payplan['pay_order'] . "-" . str_pad($payplan['dep_id'], 2, '0', STR_PAD_LEFT) . str_pad($payplan['pro_id'], 2, '0', STR_PAD_LEFT); ?></span>
-                  </h4>
-                </label>
+                  <h4>
+                    <span class="bage bg-info round mx-2 px-2"><?php echo $payplan['pay_order'] . "-" . str_pad($payplan['dep_id'], 2, '0', STR_PAD_LEFT) . str_pad($payplan['pro_id'], 2, '0', STR_PAD_LEFT); ?></span>
+                  </h4>   
               </div>
-            </div>
+            </div> -->
 
             <h6>ด้วยกลุ่มบริหาร/กลุ่มสาระการเรียนรู้ -> <?php echo $payplan['dep_name']; ?></h6>
             <div class="form-group">
-              <select class="choices form-select " name="dep_order" required>
+              <select class="choices form-select round" name="dep_order" required>
                 <option value="">เลือกกลุ่ม....</option>
                 <?php
                 $departmentObj = new department();
@@ -66,7 +65,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
             </div>
 
             <h6>มีความประสงค์ที่จะขอใช้เงินในการดำเนินงาน</h6>
-            <select class="choices form-select " name="act_id" disabled>
+            <select class="choices form-select round" name="act_id" disabled>
               <option value="">เลือกกิจกรรม....</option>
               <?php
               $activityObj = new Activity();

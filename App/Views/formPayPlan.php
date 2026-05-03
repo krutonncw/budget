@@ -51,7 +51,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
 
             <h6>ด้วยกลุ่มบริหาร/กลุ่มสาระการเรียนรู้</h6>
             <div class="form-group">
-              <select class="choices form-select" name="dep_order" id="dep_order" required>
+              <select class="choices form-select round" name="dep_order" id="dep_order" required>
                 <option value="">เลือกกลุ่ม....</option>
                 <?php
                 $departmentObj = new department();
@@ -100,7 +100,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
 
               <h6>โครงการของกลุ่มบริหาร/กลุ่มสาระการเรียนรู้</h6>
               <div class="form-group">
-                <select class="choices form-select" name="depAjax" id="depAjax" required>
+                <select class="choices form-select round" name="depAjax" id="depAjax" required>
                   <option value="">เลือกกลุ่ม....</option>
                   <?php
                   $departmentObj = new department();
@@ -141,7 +141,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
               <div class="col-12">
                 <div class="form-group has-icon-left">
                   <!-- <label for="mobile-id-icon">จำนวนเงินที่ขอใช้</label> -->
-                  <h6 for="mobile-id-icon">จำนวนเงินที่ขอใช้</h6>
+                  <h6 for="mobile-id-icon">จำนวนเงินที่ขอใช้ (จำนวนคงเหลือ: <span id="balance">0.00</span>)</h6>
                   <div class="position-relative">
                     <input type="number" step="0.01" class="form-control round"
                       placeholder="ไม่ต้องใส่เครื่องหมายจุลภาค (,)" id="mobile-id-icon" name="pay_money" required>
@@ -212,7 +212,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
       },
       success: function (data) {
         $('#projectAjax').html(data);
-        $('#activityAjax').html('');
+        $('#act_id').html('');
       }
     });
   });
@@ -228,6 +228,21 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
       },
       success: function (data) {
         $('#act_id').html(data);
+      }
+    });
+  });
+
+  $('#act_id').change(function () {
+    var act_id = $(this).val();
+    $.ajax({
+      type: "post",
+      url: "ajax_formpayplan.php",
+      data: {
+        id: act_id,
+        function: 'balance'
+      },
+      success: function (data) {
+        $('#balance').text(data);
       }
     });
   });

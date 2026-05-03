@@ -3,6 +3,10 @@
 require_once "config.php";
 
 use Ncw\Models\Department;
+use Ncw\Models\Setting;
+
+$settingObj = new Setting();
+$settings = $settingObj->getSetting();
 
 ?>
 
@@ -16,7 +20,7 @@ use Ncw\Models\Department;
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css" />
     <!-- ใส่ icon บนแถบ title bar -->
     <link rel="shortcut icon" href="<?php echo BASE_URL; ?>/assets/images/budgetIcon.svg" type="image/x-icon">
-    <title>NAbudget</title>
+    <title><?php echo htmlspecialchars($settings['sys_name']); ?></title>
 </head>
 
 <body>
@@ -24,11 +28,13 @@ use Ncw\Models\Department;
         <div class="forms-container">
             <div class="signin-signup">
                 <form action='App/Auth/Controllers/checkLogin.php' class="sign-in-form" method="POST">
-                <!-- <form action='#' class="sign-in-form" method="POST"> // เปิดเพื่อไม่ให้สามารถใช้งาน login ได้-->
+                    <!-- <form action='#' class="sign-in-form" method="POST"> // เปิดเพื่อไม่ให้สามารถใช้งาน login ได้-->
                     <?php if (isset($_GET['msg'])) {
                         echo '<h2 class="alert" >ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง</h2> ';
                     } ?>
-                    <h2 class="title">ลงชื่อเข้าใช้</h2>
+                    <!-- <h2 class="title">ลงชื่อเข้าใช้</h2> -->
+                    <img src="<?php echo BASE_URL . $settings['logo_url']?>" class="logo" alt="Logo" width="200px" />
+                    <h3 class="title"><?php echo htmlspecialchars($settings['sys_name']); ?> - ระบบจัดการงบประมาณ</h3>
                     <div class="input-field" id="username">
                         <i class="fas fa-user"></i>
                         <input type="text" name="username" id="username" placeholder="ชื่อผู้ใช้" required />
@@ -57,7 +63,7 @@ use Ncw\Models\Department;
 
                 <form action="App/Auth/Controllers/addPerson.php" class="sign-up-form" method="get" name="new">
                     <h2 class="title">ลงทะเบียนใหม่</h2>
-                    <!-- <h4 style="font-size: 35px;font-weight: 350;color: #f11818;">เฉพาะบุคลากรของโรงเรียนนิยมศิลป์อนุสรณ์เท่านั้น</h4> -->
+                    <!-- <h4 style="font-size: 35px;font-weight: 350;color: #f11818;">เฉพาะบุคลากรของ<?php echo htmlspecialchars($settings['school_name']); ?> เท่านั้น</h4> -->
                     <h4 style="font-size: 20px;font-weight: 350;color: #f11818;">ติดต่อเจ้าหน้าที่แผนงานโรงเรียน !</h4>
                     <!-- <div class="input-field" id="ftname">
                         <i class="fas fa-user"></i>
@@ -120,7 +126,7 @@ use Ncw\Models\Department;
             <div class="panel left-panel">
                 <div class="content">
                     <h3>ลงทะเบียนใหม่</h3>
-                    <h4 style="font-size: 20px;font-weight: 350;color: #fff34d;">เฉพาะบุคลากรของโรงเรียนนิยมศิลป์อนุสรณ์</h4>
+                    <h4 style="font-size: 20px;font-weight: 350;color: #fff34d;">เฉพาะบุคลากรของ<?php echo htmlspecialchars($settings['school_name']); ?></h4>
                     <p>
                         ถ้าท่านยังไม่มีบัญชีให้ลงทะเบียนใหม่
                     </p>

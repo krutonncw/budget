@@ -23,6 +23,8 @@ $budgettypes = $budgettypeObj->getAllBudgetTypes();
 
 $currentUserId = $_SESSION['id'];
 $isAdmin = ($_SESSION['role'] == 1);
+
+// print_r($settings);
 ?>
 
 <!-- แสดงข้อมูลในหน้าหลัก -->
@@ -32,11 +34,13 @@ $isAdmin = ($_SESSION['role'] == 1);
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>จัดการข้อมูลกิจกรรม</h3>
             </div>
-            <div class="col-12 col-md-6 order-md-2 order-first text-md-right">
-                <button class="btn btn-success round" data-toggle="modal" data-target="#addActivityModal">
-                    <i data-feather="plus-circle"></i> เพิ่มกิจกรรม
-                </button>
-            </div>
+            <?php if ($settings['menu_activity'] == 1) { ?>
+                <div class="col-12 col-md-6 order-md-2 order-first text-md-right">
+                    <button class="btn btn-success round" data-toggle="modal" data-target="#addActivityModal">
+                        <i data-feather="plus-circle"></i> เพิ่มกิจกรรม
+                    </button>
+                </div>
+            <?php } ?>
         </div>
     </div>
 
@@ -164,7 +168,7 @@ $isAdmin = ($_SESSION['role'] == 1);
     $canManage = ($activity['create_by'] == $currentUserId) || $isAdmin;
     if (!$canManage)
         continue;
-    ?>
+?>
     <div class="modal fade" id="editActivityModal<?php echo $activity['act_id']; ?>" data-backdrop="static"
         data-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -226,7 +230,7 @@ $isAdmin = ($_SESSION['role'] == 1);
     $canManage = ($activity['create_by'] == $currentUserId) || $isAdmin;
     if (!$canManage)
         continue;
-    ?>
+?>
     <div class="modal fade" id="deleteActivityModal<?php echo $activity['act_id']; ?>" data-backdrop="static"
         data-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
