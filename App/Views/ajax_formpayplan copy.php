@@ -37,12 +37,7 @@ if (isset($_POST['function']) && $_POST['function'] == 'activity') {
     if (!$found) {
         echo '<option value="" disabled selected>ไม่พบกิจกรรม</option>';
     }
-    exit();
-}
-
-if (isset($_POST['function']) && $_POST['function'] == 'balance') {
-    $id = $_POST['id'];
-    $activityObj = new Activity();
+    eactivityObj = new Activity();
     $activity = $activityObj->getActivityById(['act_id' => $id]);
     $act_money = $activity['act_money'] ?? 0;
 
@@ -50,6 +45,11 @@ if (isset($_POST['function']) && $_POST['function'] == 'balance') {
     $sum_pay_data = $payplanObj->getSumPayMoneyByAct(['act_id' => $id]);
     $sum_pay = $sum_pay_data['sumPayMoneyAct'] ?? 0;
 
+    $activity = $stmt->fetch();
+    $act_money = $activity['act_money'];
+    $stmt2 = $conn->prepare("SELECT SUM(pay_money) as sum_pay FROM payplan WHERE act_id = '$id'");
+    $stmt2->execute();
+    $sum_pay = $stmt2->fetch()['sum_pay'] ?? 0;
     $balance = $act_money - $sum_pay;
     echo number_format($balance, 2);
     exit();

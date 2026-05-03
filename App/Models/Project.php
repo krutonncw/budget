@@ -98,4 +98,25 @@ class Project extends Db
     $data = $stmt->fetchAll();
     return $data;
   }
+
+  // ดึงข้อมูลโครงการตาม dep_id
+  public function getProjectsByDep($dep_id)
+  {
+    $sql = "
+      SELECT
+        project.pro_id,
+        project.pro_code,
+        project.pro_name,
+        project.dep_id,
+        department.dep_name
+      FROM project 
+        LEFT JOIN department ON project.dep_id = department.dep_id
+      WHERE project.dep_id = :dep_id
+      ORDER BY pro_id
+    ";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute($dep_id);
+    $data = $stmt->fetchAll();
+    return $data;
+  }
 }

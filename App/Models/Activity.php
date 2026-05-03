@@ -287,4 +287,33 @@ class Activity extends Db
     return $data;
   }
 
+  //เรียกดูกิจกรรมตามรหัสโครงการ
+  public function getActivitiesByPro($pro_id)
+  {
+    $sql = "
+      SELECT
+        activity.act_id,
+        activity.act_name,
+        activity.act_money,
+        activity.act_balance,
+        activity.pro_id,
+        activity.bgt_id,
+        activity.create_by,
+        project.pro_name,
+        budgettype.bgt_name,
+        department.dep_name
+      FROM activity
+        LEFT JOIN project ON activity.pro_id = project.pro_id
+        LEFT JOIN budgettype ON activity.bgt_id = budgettype.bgt_id
+        LEFT JOIN department ON project.dep_id = department.dep_id
+      WHERE activity.pro_id = :pro_id
+      ORDER BY
+        act_id
+    ";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute($pro_id);
+    $data = $stmt->fetchAll();
+    return $data;
+  }
+
 }
