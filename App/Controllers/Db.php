@@ -14,7 +14,7 @@ class Db {
   private $host = "localhost";
   private $user = "root";
   private $password = "";
-  private $dbName = "na_budget";
+  private $dbName = "ncw_budget";
 
   // บนเว็บ ncwschool
   // private $host = "localhost";

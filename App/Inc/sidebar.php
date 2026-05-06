@@ -172,6 +172,9 @@ $settings = $settingObj->getSetting();
                                     <li>
                                         <a href='" . BASE_URL . "/App/Views/showPayPlanExcel.php' target='_blank'>Excel ข้อมูลการเบิก</a>
                                     </li>
+                                    <li>
+                                        <a href='" . BASE_URL . "/App/Views/reportBudget.php' target='_blank'>รายงานการใช้เงินตามแผนปฏิบัติการ</a>
+                                    </li>
                                     </ul>
                                 </li>
                                 ";

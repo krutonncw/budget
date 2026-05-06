@@ -104,7 +104,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
                             if ($sumPayMoneys === false) {
                                 $sumPayMoneys['sumPayMoney'] = 0;
                             }
-                            echo "<div class='col-md-3'>
+                            echo "<div class='col-lg-3 col-md-6 col-sm-12 mb-3'>
                             <div class='card'>
                                 <div class='card-header'>
                                     <h4><i class='icofont-dollar-plus icofont-1x mr-2' style='color: #00BFFF;'></i>{$BudgetType['bgt_name']}</h4>
@@ -157,7 +157,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
             $departmentObj = new department();
             $departments = $departmentObj->getAlldepartments();
             foreach ($departments as $department) {
-                echo "<div class='col-md-4 col-sm-12'>";
+                echo "<div class='col-lg-4 col-md-6 col-sm-12'>";
                 echo "<div class='card'>
                     <div class='card-content'>
                         <img class='card-img-top img-fluid mt-2 mt-2' style='width: 100%;height:120px;' src='../../assets/images/group/group{$department['dep_id']}.svg' alt='Card image cap' />

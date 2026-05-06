@@ -7,7 +7,7 @@ class BudgetType extends Db {
 
   public function getAllBudgetTypes(){
     $sql = "
-      SELECT * FROM budgettype ORDER BY bgt_id
+      SELECT * FROM budgettype WHERE status = 1 ORDER BY bgt_id
     ";
     $stmt = $this->pdo->query($sql);
     $data = $stmt->fetchAll();

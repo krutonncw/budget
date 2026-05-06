@@ -24,7 +24,18 @@ use Ncw\Models\Ref;
 require_once BASE_PATH . "/App/Inc/header.php";
 require_once BASE_PATH . "/App/Inc/sidebar.php";
 
+if ($settings['menu_payplan'] == 0) {
+  echo "<div class='card-content'>
+          <div class='card-body'>
+            <div class='alert alert-danger text-center'><h3>ขออภัย! ระบบไม่เปิดให้บันทึกข้อมูลการใช้เงินตามแผน</h3> 
+            <p>กรุณาติดต่อผู้ดูแลระบบเพื่อเปิดใช้งานเมนูนี้</p>
+            </div> 
+        </div>";
+  require_once BASE_PATH . "/App/Inc/footer.php";
+  exit();
+}
 ?>
+
 
 <!-- แสดงข้อมูลในหน้าหลัก -->
 <section id="content-types " class="d-flex justify-content-center">
@@ -201,7 +212,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
 <script src="../../assets/vendors/choices.js/choices.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-  $('#depAjax').change(function () {
+  $('#depAjax').change(function() {
     var dep_id = $(this).val();
     $.ajax({
       type: "post",
@@ -210,14 +221,14 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
         id: dep_id,
         function: 'project'
       },
-      success: function (data) {
+      success: function(data) {
         $('#projectAjax').html(data);
         $('#act_id').html('');
       }
     });
   });
 
-  $('#projectAjax').change(function () {
+  $('#projectAjax').change(function() {
     var pro_id = $(this).val();
     $.ajax({
       type: "post",
@@ -226,13 +237,13 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
         id: pro_id,
         function: 'activity'
       },
-      success: function (data) {
+      success: function(data) {
         $('#act_id').html(data);
       }
     });
   });
 
-  $('#act_id').change(function () {
+  $('#act_id').change(function() {
     var act_id = $(this).val();
     $.ajax({
       type: "post",
@@ -241,7 +252,7 @@ require_once BASE_PATH . "/App/Inc/sidebar.php";
         id: act_id,
         function: 'balance'
       },
-      success: function (data) {
+      success: function(data) {
         $('#balance').text(data);
       }
     });

@@ -20,7 +20,8 @@ class Setting extends Db
 		  setting.man_name,
 		  setting.plan_name,
 		  setting.menu_project,
-		  setting.menu_activity
+		  setting.menu_activity,
+		  setting.menu_payplan
 	  FROM 
 	  	  setting 
 	  WHERE

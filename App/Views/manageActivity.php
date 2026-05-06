@@ -22,7 +22,8 @@ $budgettypeObj = new BudgetType();
 $budgettypes = $budgettypeObj->getAllBudgetTypes();
 
 $currentUserId = $_SESSION['id'];
-$isAdmin = ($_SESSION['role'] == 1);
+$isAdmin = ($_SESSION['role'] == 1); 
+$isPlan = ($_SESSION['role'] == 2 || $_SESSION['role'] == 7); // ผู้วางแผนและแอดมินสามารถจัดการกิจกรรมได้
 
 // print_r($settings);
 ?>
@@ -75,7 +76,7 @@ $isAdmin = ($_SESSION['role'] == 1);
                         $n = 0;
                         foreach ($activitys as $activity) {
                             $n++;
-                            $canManage = ($activity['create_by'] == $currentUserId) || $isAdmin;
+                            $canManage = ($activity['create_by'] == $currentUserId) || $isAdmin || $isPlan;
                             echo "
                 <tr>
                   <td>{$n}</td>
@@ -84,17 +85,18 @@ $isAdmin = ($_SESSION['role'] == 1);
                   <td>{$activity['dep_name']}</td>
                   <td>{$activity['bgt_name']}</td>
                   <td>" . number_format($activity['act_money'], 2) . "</td>
-                  <td>
-              ";
-                            if ($canManage) {
+                  <td>";
+                            if ($canManage && $settings['menu_activity'] == 1) {
                                 echo "
-                    <button class='btn btn-outline-warning btn-sm round mr-1' data-toggle='modal' data-target='#editActivityModal{$activity['act_id']}'>
-                      <i data-feather='edit'></i> แก้ไข
-                    </button>
-                    <button class='btn btn-outline-danger btn-sm round' data-toggle='modal' data-target='#deleteActivityModal{$activity['act_id']}'>
-                      <i data-feather='trash-2'></i> ลบ
-                    </button>
-                ";
+                                    <button class='btn btn-outline-warning btn-sm round mr-1' data-toggle='modal' data-target='#editActivityModal{$activity['act_id']}'>
+                                    <i data-feather='edit'></i> แก้ไข
+                                    </button>";
+                                if ($isAdmin) {
+                                    echo "
+                                        <button class='btn btn-outline-danger btn-sm round' data-toggle='modal' data-target='#deleteActivityModal{$activity['act_id']}'>
+                                        <i data-feather='trash-2'></i> ลบ
+                                        </button>";
+                                }
                             } else {
                                 echo "<span class='text-muted'>-</span>";
                             }
@@ -165,7 +167,7 @@ $isAdmin = ($_SESSION['role'] == 1);
 
 <!-- ===== Modal แก้ไขกิจกรรม (สร้างให้แต่ละรายการที่มีสิทธิ์) ===== -->
 <?php foreach ($activitys as $activity) {
-    $canManage = ($activity['create_by'] == $currentUserId) || $isAdmin;
+    $canManage = ($activity['create_by'] == $currentUserId) || $isAdmin || $isPlan;
     if (!$canManage)
         continue;
 ?>

@@ -32,9 +32,9 @@ $settings = $settingObj->getSetting();
                     <form action="../Controllers/updateSetting.php" class="form form-vertical" method="post"
                         enctype="multipart/form-data">
                         <div class=" form-body">
-                             <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($settings['logo_url'] != "") ? BASE_URL.$settings['logo_url'] : BASE_URL."/assets/images/logo/logo_main.png"; ?> alt="Logo Main"
-                                    style="width: 200px; text-align: center; margin-top:10px;" />
-                            <div class="row">                               
+                            <img class="card-img-top rounded-circle mx-auto d-block" <?php echo "src=" . $retVal = ($settings['logo_url'] != "") ? BASE_URL . $settings['logo_url'] : BASE_URL . "/assets/images/logo/logo_main.png"; ?> alt="Logo Main"
+                                style="width: 200px; text-align: center; margin-top:10px;" />
+                            <div class="row">
                                 <div class="col-6">
                                     <div class="form-group has-icon-left">
                                         <label for="first-name-icon">ชื่อระบบ</label>
@@ -86,7 +86,7 @@ $settings = $settingObj->getSetting();
                                             </div>
                                         </div>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
                                         <label for="first-name-icon">ชื่อผู้อำนวยการโรงเรียน</label>
@@ -113,7 +113,7 @@ $settings = $settingObj->getSetting();
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-4">
                                     <div class="form-group has-icon-left">
                                         <label for="menu_project-icon">สถานะการเพิ่มโครงการ</label>
                                         <select class="choices form-select round" name="menu_project">
@@ -123,7 +123,7 @@ $settings = $settingObj->getSetting();
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-4">
                                     <div class="form-group has-icon-left">
                                         <label for="menu_activity-icon">สถานะการเพิ่มกิจกรรม</label>
                                         <select class="choices form-select round" name="menu_activity">
@@ -132,12 +132,23 @@ $settings = $settingObj->getSetting();
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group has-icon-left">
-                                    <label for="file-id-icon">อัพโหลดโลโก้</label>
-                                    <div class="position-relative">
-                                        <input type="file" class="form-control round" name="logo_url" id="logo_url">
-                                        <div class="form-control-icon">
-                                            <i data-feather="file-plus"></i>
+                                <div class="col-4">
+                                    <div class="form-group has-icon-left">
+                                        <label for="menu_payplan-icon">สถานะการขออนุมัติ</label>
+                                        <select class="choices form-select round" name="menu_payplan">
+                                            <option value="0" <?php if ($settings['menu_payplan'] == 0) echo "selected"; ?>>ไม่เปิดใช้งาน</option>
+                                            <option value="1" <?php if ($settings['menu_payplan'] == 1) echo "selected"; ?>>เปิดใช้งาน</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group has-icon-left">
+                                        <label for="file-id-icon">อัพโหลดโลโก้</label>
+                                        <div class="position-relative">
+                                            <input type="file" class="form-control round" name="logo_url" id="logo_url">
+                                            <div class="form-control-icon">
+                                                <i data-feather="file-plus"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -42,7 +42,7 @@ $activity = $activityObj->getDepIdByActId($_REQUEST);
           <div class="col-md-9 d-flex justify-content-end">
             <?php
             echo "
-            <a href='showActByDep_test.php?dep_id={$activity[0]['dep_id']}' class='btn btn-primary round mr-2'>กลับ</a>";
+            <a href='showActByDep.php?dep_id={$activity[0]['dep_id']}' class='btn btn-primary round mr-2'>กลับ</a>";
             ?>
           </div>
         </div>
