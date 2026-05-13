@@ -4,17 +4,17 @@ namespace Ncw\Controllers;
 use PDO;
 
 class Db {
-  // บนเว็บ
-  // private $host = "localhost";
-  // private $user = "na_budget";
-  // private $password = "Na2569";
-  // private $dbName = "na_budget";
-
   // บน XAMPP
   private $host = "localhost";
   private $user = "root";
   private $password = "";
-  private $dbName = "ncw_budget";
+  private $dbName = "na_budget";
+
+  // บน XAMPP
+  // private $host = "localhost";
+  // private $user = "root";
+  // private $password = "";
+  // private $dbName = "ncw_budget";
 
   // บนเว็บ ncwschool
   // private $host = "localhost";
