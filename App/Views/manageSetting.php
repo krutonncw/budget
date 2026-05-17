@@ -102,6 +102,19 @@ $settings = $settingObj->getSetting();
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group has-icon-left">
+                                        <label for="first-name-icon">ชื่อรองผู้อำนวยการโรงเรียน กลุ่มบริหารบประมาณ</label>
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control round" placeholder="ชื่อผู้อำนวยการโรงเรียน" id="first-name-icon"
+                                                name="man_name" <?php $retVal = ($settings['man_name'] == "") ? "" : $settings['man_name'];
+                                                                echo 'value="' . $retVal . '"'; ?>>
+                                            <div class="form-control-icon">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group has-icon-left">
                                         <label for="first-name-icon">ชื่อแผนงานโรงเรียน</label>
                                         <div class="position-relative">
                                             <input type="text" class="form-control round" placeholder="ชื่อแผนงานโรงเรียน" id="first-name-icon"
